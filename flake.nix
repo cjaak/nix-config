@@ -77,9 +77,9 @@
                     # ./modules/appdata-backup
 
                     # # Import the machine config + secrets
-                    # ./machines/nixos
-                    # ./machines/nixos/emily
-                    # ./secrets
+                    ./machines/nixos
+                    ./machines/nixos/
+                    ./secrets
                     agenix.nixosModules.default
 
                     # # Services and applications
