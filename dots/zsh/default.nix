@@ -3,9 +3,9 @@
     grc
   ];
 
-  age.secrets.bwSessionFish = {
-    file = ../../secrets/bwSessionFish.age;
-  };
+#  age.secrets.bwSessionFish = {
+#    file = ../../secrets/bwSessionFish.age;
+#  };
 
   programs.zsh = {
     enable = true;
