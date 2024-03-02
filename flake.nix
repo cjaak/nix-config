@@ -78,7 +78,7 @@
 
                     # # Import the machine config + secrets
                     ./machines/nixos
-                    ./machines/nixos/
+                    ./machines/nixos/nixos-server
                     ./secrets
                     agenix.nixosModules.default
 
