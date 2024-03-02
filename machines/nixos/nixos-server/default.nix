@@ -9,7 +9,7 @@
   zfs-root = {
     boot = {
       devNodes = "/dev/disk/by-id/";
-      bootDevices = [  "ata-Samsung_SSD_870_EVO_250GB_S6PENL0T902873K" ];
+      bootDevices = [  "nvme-Fanxiang_S500Pro_256GB_FXS500Pro234940404" ];
       immutable = false;
       availableKernelModules = [  "uhci_hcd" "ehci_pci" "ahci" "sd_mod" "sr_mod" ];
       removableEfi = true;
