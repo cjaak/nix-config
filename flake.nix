@@ -111,7 +111,7 @@
                     home-manager.backupFileExtension = "bak";
                     }
                 ];
-            }
+            };
         };
     };
 }
