@@ -65,7 +65,7 @@
                     vars = import ./machines/nixos/vars.nix;
                 };
                 modules = [
-                    Base configuration and modules
+                    # Base configuration and modules
                     ./modules/aspm-tuning
                     #./modules/hddtemp-monitor
                     ./modules/zfs-root
