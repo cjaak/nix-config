@@ -41,7 +41,7 @@ users.share = {
 
 environment.systemPackages = [ config.services.samba.package ];
 
-users.users.notthebee.extraGroups = ["share"];
+users.users.charlie.extraGroups = ["share"];
 
 systemd.tmpfiles.rules = map (x: "d ${x.path} 0775 share share - -") (lib.attrValues smb.share_list) ++ ["d /mnt 0775 share share - -"];
 
@@ -64,8 +64,8 @@ services.samba = {
   securityType = "user";
   extraConfig = ''
     workgroup = WORKGROUP
-    server string = emily
-    netbios name = emily
+    server string = nixos-server
+    netbios name = nixos-server
     security = user 
     hosts allow = 192.168.2.0/24 192.168.3.135/32 10.4.0.0/24
     guest account = nobody

@@ -24,7 +24,7 @@
       };
     };
     networking = {
-      hostName = "emily";
+      hostName = "nixos-server";
       timeZone = "Europe/Berlin";
       hostId = "0730ae51";
     };
