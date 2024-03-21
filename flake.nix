@@ -27,6 +27,17 @@
         nur.url = "github:nix-community/nur";
 
         deploy-rs.url = "github:serokell/deploy-rs";
+
+        overlays = [
+            (self: super: {
+              nixpkgs = super.nixpkgs.override {
+                config = {
+                  permittedInsecurePackages = [ "nix-2.15.3" ];
+                  # other global nixpkgs configurations...
+                };
+              };
+            })
+          ];
     };
 
     outputs = { self, 
@@ -57,16 +68,7 @@
             };
         };
 
-        nixosConfigurations = {
-            "nixos-server" = let
-              pkgs = import nixpkgs {
-                system = "x86_64-linux";
-                config = {
-                  permittedInsecurePackages = [ "nix-2.15.3" ];
-                  # any other nixpkgs-specific configuration...
-                };
-              };
-            in pkgs.lib.nixosSystem {
+        nixosConfigurations = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 specialArgs = {
                     inherit inputs networksLocal networksExternal;
