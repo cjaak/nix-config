@@ -64,6 +64,9 @@
                     inherit inputs networksLocal networksExternal;
                     vars = import ./machines/nixos/vars.nix;
                 };
+                nixpkgs.config = {
+                    permittedInsecurePackages = [ "nix-2.15.3" ];
+                };
                 modules = [
                     # Base configuration and modules
                     ./modules/aspm-tuning
