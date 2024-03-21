@@ -58,7 +58,15 @@
         };
 
         nixosConfigurations = {
-            nixos-server = nixpkgs.lib.nixosSystem {
+            "nixos-server" = let
+              pkgs = import nixpkgs {
+                inherit system;
+                config = {
+                  permittedInsecurePackages = [ "nix-2.15.3" ];
+                  # any other nixpkgs-specific configuration...
+                };
+              };
+            in pkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 specialArgs = {
                     inherit inputs networksLocal networksExternal;
