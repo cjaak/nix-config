@@ -7,7 +7,7 @@ in {
 
   options.mover = {
     cacheArray = mkOption {
-      description = "The drive aray to move the data from";
+      description = "The drive array to move the data from";
       type = types.str;
       default = "/mnt/cache";
     };
