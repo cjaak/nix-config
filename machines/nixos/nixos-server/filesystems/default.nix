@@ -105,6 +105,7 @@
   fileSystems.${vars.cacheArray} =
   { device = "cache";
     fsType = "zfs";
+    neededForBoot = false;
   };
 
   fileSystems."/mnt/data1" =
