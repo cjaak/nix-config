@@ -27,16 +27,18 @@
         nur.url = "github:nix-community/nur";
 
         deploy-rs.url = "github:serokell/deploy-rs";
-
-        overlays = self: super: {
-              nixpkgs = super.nixpkgs.override {
-                config = {
-                  permittedInsecurePackages = [ "nix-2.15.3" ];
-                  # other global nixpkgs configurations...
-                };
-              };
-            };
     };
+
+    overlays = [
+    (self: super: {
+      nixpkgs = super.nixpkgs.override {
+        config = {
+          permittedInsecurePackages = [ "nix-2.15.3" ];
+          # other global nixpkgs configurations...
+        };
+      };
+    })
+  ];
 
     outputs = { self, 
               nixpkgs, 
@@ -124,5 +126,4 @@
                 ];
             };
         };
-
-}
+    }
