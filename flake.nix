@@ -28,16 +28,14 @@
 
         deploy-rs.url = "github:serokell/deploy-rs";
 
-        overlays = [
-            (self: super: {
+        overlays = self: super: {
               nixpkgs = super.nixpkgs.override {
                 config = {
                   permittedInsecurePackages = [ "nix-2.15.3" ];
                   # other global nixpkgs configurations...
                 };
               };
-            })
-          ];
+            };
     };
 
     outputs = { self, 
