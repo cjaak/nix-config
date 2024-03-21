@@ -1,7 +1,7 @@
 { inputs, lib, config, vars, pkgs, ... }:
 {
-  boot.kernelModules = [ "nct6775" ];
-  hardware.cpu.amd.updateMicrocode = true;
+  boot.kernelModules = [ "i915" ];
+  hardware.cpu.intel.updateMicrocode = true;
   hardware.enableRedistributableFirmware = true;
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
