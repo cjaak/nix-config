@@ -30,9 +30,9 @@
     };
 
     inputs.nixpkgs.overlays = [
-      (self: super: {
+      {
         nixpkgs.config.permittedInsecurePackages = [ "nix-2.15.3" ];
-      })
+      }
     ];
 
 
