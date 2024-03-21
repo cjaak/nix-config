@@ -2,21 +2,7 @@
     description = "my nix home server";
     
     inputs = {
-        nixpkgs = {
-          url = "github:nixos/nixpkgs/release-23.11";
-          overlays = [
-            (self: super: {
-              # Overlay content goes here
-              # For example, to set permitted insecure packages:
-              nixpkgs = super.nixpkgs.override {
-                config = {
-                  permittedInsecurePackages = [ "nix-2.15.3" ];
-                  # other global nixpkgs configurations...
-                };
-              };
-            })
-          ];
-        };
+        nixpkgs.url = "github:nixos/nixpkgs/release-23.11";
         nixvim.url = "github:pta2002/nixvim/nixos-23.11";
         home-manager = {
         url = "github:nix-community/home-manager/release-23.11";
@@ -42,6 +28,13 @@
 
         deploy-rs.url = "github:serokell/deploy-rs";
     };
+
+    inputs.nixpkgs.overlays = [
+      (self: super: {
+        nixpkgs.config.permittedInsecurePackages = [ "nix-2.15.3" ];
+      })
+    ];
+
 
     outputs = { self, 
               nixpkgs, 
