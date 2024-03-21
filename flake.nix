@@ -29,13 +29,6 @@
         deploy-rs.url = "github:serokell/deploy-rs";
     };
 
-    inputs.nixpkgs.overlays = [
-      {
-        nixpkgs.config.permittedInsecurePackages = [ "nix-2.15.3" ];
-      }
-    ];
-
-
     outputs = { self, 
               nixpkgs, 
               home-manager, 
