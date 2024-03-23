@@ -20,17 +20,7 @@
       { name = "notthebee/prompt"; tags = [ as:theme ]; }
     ];
     };
-    shellAliases = {
-      la = "ls --color -lha";
-      df = "df -h";
-      du = "du -ch";
-      ipp = "curl ipinfo.io/ip";
-      yh = "yt-dlp --continue --no-check-certificate --format=bestvideo+bestaudio --exec='ffmpeg -i {} -c:a copy -c:v copy {}.mkv && rm {}'";
-      yd = "yt-dlp --continue --no-check-certificate --format=bestvideo+bestaudio --exec='ffmpeg -i {} -c:v prores_ks -profile:v 1 -vf fps=25/1 -pix_fmt yuv422p -c:a pcm_s16le {}.mov && rm {}'";
-      ya = "yt-dlp --continue --no-check-certificate --format=bestaudio -x --audio-format wav";
-      aspm = "sudo lspci -vv | awk '/ASPM/{print $0}' RS= | grep --color -P '(^[a-z0-9:.]+|ASPM )'";
-      mkdir = "mkdir -p";
-      };
+
 
   };
   }

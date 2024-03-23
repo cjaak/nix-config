@@ -86,7 +86,7 @@
                     # ./services/invoiceninja
                     # ./services/paperless-ngx
                     # ./services/icloud-drive
-                    # ./services/traefik
+                     ./services/traefik
                     # ./services/deluge
                     # ./services/arr
                     # ./services/jellyfin
@@ -95,7 +95,7 @@
                     # ./services/kiwix
                     # ./services/pingvin-share
                     # #./services/scrutiny
-                    # ./services/homepage
+                     ./services/homepage
 
                     # # User-specific configurations
                     ./users/charlie
