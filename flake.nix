@@ -50,7 +50,7 @@
                 profiles.system = {
                 sshUser = "charlie";
                 user = "root";
-                sshOpts = [ "-p" "22" ];
+                sshOpts = [ "-p" "69" ];
                 remoteBuild = true;
                 path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.nixos-server;
                 };
