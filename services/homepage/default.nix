@@ -61,9 +61,9 @@ homepageCustomCss = pkgs.writeTextFile {
           "${homepageSettings.widgets}:/app/config/widgets.yaml"
           "${homepageCustomCss}:/app/config/custom.css"
           "/var/run/podman/podman.sock:/var/run/docker.sock:ro"
-          "${config.age.secrets.sonarrApiKey.path}:/app/config/sonarr.key"
-          "${config.age.secrets.radarrApiKey.path}:/app/config/radarr.key"
-          "${config.age.secrets.jellyfinApiKey.path}:/app/config/jellyfin.key"
+#          "${config.age.secrets.sonarrApiKey.path}:/app/config/sonarr.key"
+#          "${config.age.secrets.radarrApiKey.path}:/app/config/radarr.key"
+#          "${config.age.secrets.jellyfinApiKey.path}:/app/config/jellyfin.key"
         ];
         environment = {
           TZ = vars.timeZone;
@@ -72,7 +72,7 @@ homepageCustomCss = pkgs.writeTextFile {
           HOMEPAGE_FILE_JELLYFIN_KEY = "/app/config/jellyfin.key";
         };
         environmentFiles = [
-          config.age.secrets.paperless.path
+#          config.age.secrets.paperless.path
         ];
       };
     };
