@@ -54,7 +54,7 @@ in
           "${internalIP}:80:80"
         ];
         environmentFiles = [
-#          config.age.secrets.cloudflareDnsApiCredentials.path
+          config.age.secrets.cloudflareDnsApiCredentials.path
         ];
         volumes = [
           "/var/run/podman/podman.sock:/var/run/docker.sock:ro"
