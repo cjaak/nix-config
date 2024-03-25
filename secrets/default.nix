@@ -20,9 +20,9 @@
   # age.secrets.wireguardCredentials = lib.mkDefault {
   #     file = ./wireguardCredentials.age;
   #   };
-  # age.secrets.cloudflareDnsApiCredentials = lib.mkDefault {
-  #     file = ./cloudflareDnsApiCredentials.age;
-  #   };
+   age.secrets.cloudflareDnsApiCredentials = lib.mkDefault {
+       file = ./cloudflareDnsApiCredentials.age;
+     };
   # age.secrets.invoiceNinja = lib.mkDefault {
   #     file = ./invoiceNinja.age;
   #   };
