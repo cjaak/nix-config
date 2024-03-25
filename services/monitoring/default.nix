@@ -11,7 +11,7 @@ networking.firewall.allowedTCPPorts = [
     port = 9001;
     scrapeConfigs = [
       {
-        job_name = "emily";
+        job_name = "nixos-server";
         static_configs = [{
           targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
         }];

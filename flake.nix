@@ -90,9 +90,9 @@
                     # ./services/deluge
                     # ./services/arr
                     # ./services/jellyfin
-                    # ./services/vaultwarden
-                    # ./services/monitoring
-                    # ./services/kiwix
+                     ./services/vaultwarden
+                     ./services/monitoring
+                     ./services/kiwix
                     # ./services/pingvin-share
                     # #./services/scrutiny
                      ./services/homepage
