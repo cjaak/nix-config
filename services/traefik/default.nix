@@ -1,5 +1,6 @@
 { config, lib, vars, networksLocal, ... }: let
-internalIP = (lib.lists.findSingle (x: x.hostname == "${config.networking.hostName}") { ip-address = "${networksLocal.networks.lan.cidr}"; } 0 networksLocal.networks.lan.reservations).ip-address;
+internalIP = "192.168.178.59";
+#(lib.lists.findSingle (x: x.hostname == "${config.networking.hostName}") { ip-address = "${networksLocal.networks.lan.cidr}"; } 0 networksLocal.networks.lan.reservations).ip-address;
 directories = [
 "${vars.serviceConfigRoot}/traefik"
 ];
