@@ -11,7 +11,7 @@ in
     figlet
     nodejs
     ripgrep
-    rnix-lsp
+#    rnix-lsp
   ];
 
   programs.neovim = {

@@ -40,12 +40,12 @@
   diagnostic.errorSign = "";
   diagnostic.infoSign = "";
   python.jediEnabled = false;
-  languageserver = {
-    nix = {
-      command = "rnix-lsp";
-      filetypes = ["nix"];
-    };
-  };
+#  languageserver = {
+#    nix = {
+#      command = "rnix-lsp";
+#      filetypes = ["nix"];
+#    };
+#  };
   ansible.dev.serverPath = "${homeDir}/.nix-profile/bin/ansible-language-server";
   ansible.builtin.isWithYamllint = true;
   ansible.disableProgressNotification = false;
