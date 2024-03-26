@@ -4,7 +4,7 @@
     lan = {
       enable = true;
       interface = "eth0";  # Adjust this as per your network interface
-      cidr = "192.168.1.0/24";
+      cidr = "192.168.178.0/24";
 
       reservations = [
         {
@@ -19,8 +19,8 @@
       ];
     };
 
-    defaultGateway = "192.168.1.1";  # Assuming this is your gateway
-    nameservers = [ "192.168.1.1" ];  # Assuming this is your DNS server
+    defaultGateway = "192.168.178.1";  # Update this to match your gateway
+    nameservers = [ "192.168.178.1" ];  # Update this to match your DNS server
   };
 
   # Additional local network settings can be added here
