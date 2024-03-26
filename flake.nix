@@ -88,7 +88,7 @@
                     # ./services/icloud-drive
                      ./services/traefik
                     # ./services/deluge
-                    # ./services/arr
+                     ./services/arr
                     # ./services/jellyfin
                      ./services/vaultwarden
                      ./services/monitoring

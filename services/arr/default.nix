@@ -14,24 +14,24 @@ directories = [
   in
   {
 
-system.activationScripts.recyclarr_configure = ''
-    sed=${pkgs.gnused}/bin/sed
-    configFile=${vars.serviceConfigRoot}/recyclarr/recyclarr.yml
-    sonarr="${inputs.recyclarr-configs}/sonarr/web-2160p-v4.yml"
-    sonarrApiKey=$(cat "${config.age.secrets.sonarrApiKey.path}")
-    radarr="${inputs.recyclarr-configs}/radarr/remux-web-2160p.yml"
-    radarrApiKey=$(cat "${config.age.secrets.radarrApiKey.path}")
-
-    cat $sonarr > $configFile
-    $sed -i"" "s/Put your API key here/$sonarrApiKey/g" $configFile
-    $sed -i"" "s/Put your Sonarr URL here/https:\/\/sonarr.${vars.domainName}/g" $configFile
-
-    printf "\n" >> ${vars.serviceConfigRoot}/recyclarr/recyclarr.yml
-    cat $radarr >> ${vars.serviceConfigRoot}/recyclarr/recyclarr.yml
-    $sed -i"" "s/Put your API key here/$radarrApiKey/g" $configFile
-    $sed -i"" "s/Put your Radarr URL here/https:\/\/radarr.${vars.domainName}/g" $configFile
-
-    '';
+#system.activationScripts.recyclarr_configure = ''
+#    sed=${pkgs.gnused}/bin/sed
+#    configFile=${vars.serviceConfigRoot}/recyclarr/recyclarr.yml
+#    sonarr="${inputs.recyclarr-configs}/sonarr/web-2160p-v4.yml"
+#    sonarrApiKey=$(cat "${config.age.secrets.sonarrApiKey.path}")
+#    radarr="${inputs.recyclarr-configs}/radarr/remux-web-2160p.yml"
+#    radarrApiKey=$(cat "${config.age.secrets.radarrApiKey.path}")
+#
+#    cat $sonarr > $configFile
+#    $sed -i"" "s/Put your API key here/$sonarrApiKey/g" $configFile
+#    $sed -i"" "s/Put your Sonarr URL here/https:\/\/sonarr.${vars.domainName}/g" $configFile
+#
+#    printf "\n" >> ${vars.serviceConfigRoot}/recyclarr/recyclarr.yml
+#    cat $radarr >> ${vars.serviceConfigRoot}/recyclarr/recyclarr.yml
+#    $sed -i"" "s/Put your API key here/$radarrApiKey/g" $configFile
+#    $sed -i"" "s/Put your Radarr URL here/https:\/\/radarr.${vars.domainName}/g" $configFile
+#
+#    '';
   
   systemd.tmpfiles.rules = map (x: "d ${x} 0775 share share - -") directories;
   virtualisation.oci-containers = {
