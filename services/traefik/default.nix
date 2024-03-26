@@ -24,6 +24,7 @@ in
           "--certificatesresolvers.letsencrypt.acme.dnschallenge=true"
           "--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare"
           "--certificatesresolvers.letsencrypt.acme.email=${config.email.toAddress}"
+          "--certificatesresolvers.letsencrypt.acme.dnschallenge.resolvers=1.1.1.1:53,8.8.8.8:53"
           # HTTP
           "--entrypoints.web.address=:80"
           "--entrypoints.web.http.redirections.entrypoint.to=websecure"
