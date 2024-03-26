@@ -49,24 +49,24 @@
   useDHCP = true;
   networkmanager.enable = false;
   firewall = {
-  allowPing = true;
-  allowedTCPPorts = [ 5201 ];
+    allowPing = true;
+    allowedTCPPorts = [ 5201 ];
   };
-  nameservers = [ "192.168.2.1" ];
-  defaultGateway = "192.168.2.1";
+  nameservers = [ "192.168.178.1" ];  # Updated DNS server
+  defaultGateway = "192.168.178.1";  # Confirm if this is correct
   interfaces = {
     enp1s0f0.ipv4 = {
-    addresses = [{
-      address = "192.168.2.230";
-      prefixLength = 24;
-    }];
-    routes = [{
-      address = "192.168.2.0";
-      prefixLength = 24;
-      via = "192.168.2.1";
-    }];
-  };
+      addresses = [{
+        address = "192.168.178.59";
+        prefixLength = 24;
+      }];
+      routes = [{
+        address = "192.168.178.0";
+        prefixLength = 24;
+        via = "192.168.178.1";
+      }];
     };
+  };
 };
 
   virtualisation.docker.storageDriver = "overlay2";
