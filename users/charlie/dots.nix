@@ -22,6 +22,7 @@ in
       ../../dots/zsh/default.nix
       ../../dots/nvim/default.nix
       ../../dots/neofetch/default.nix
+      ../../dots/kitty/default.nix
       ./packages.nix
   ];
 
