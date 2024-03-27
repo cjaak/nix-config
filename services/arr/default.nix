@@ -49,7 +49,7 @@ directories = [
           "-l=homepage.href=https://sonarr.${vars.domainName}"
           "-l=homepage.description=TV show tracker"
           "-l=homepage.widget.type=sonarr"
-          "-l=homepage.widget.key={{HOMEPAGE_FILE_SONARR_KEY}}"
+#          "-l=homepage.widget.key={{HOMEPAGE_FILE_SONARR_KEY}}"
           "-l=homepage.widget.url=http://sonarr:8989"
         ];
         volumes = [
@@ -100,7 +100,7 @@ directories = [
           "-l=homepage.href=https://radarr.${vars.domainName}"
           "-l=homepage.description=Movie tracker"
           "-l=homepage.widget.type=radarr"
-          "-l=homepage.widget.key={{HOMEPAGE_FILE_RADARR_KEY}}"
+#          "-l=homepage.widget.key={{HOMEPAGE_FILE_RADARR_KEY}}"
           "-l=homepage.widget.url=http://radarr:7878"
         ];
         volumes = [

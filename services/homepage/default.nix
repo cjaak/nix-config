@@ -67,9 +67,9 @@ homepageCustomCss = pkgs.writeTextFile {
         ];
         environment = {
           TZ = vars.timeZone;
-          HOMEPAGE_FILE_SONARR_KEY = "/app/config/sonarr.key";
-          HOMEPAGE_FILE_RADARR_KEY = "/app/config/radarr.key";
-          HOMEPAGE_FILE_JELLYFIN_KEY = "/app/config/jellyfin.key";
+#          HOMEPAGE_FILE_SONARR_KEY = "/app/config/sonarr.key";
+#          HOMEPAGE_FILE_RADARR_KEY = "/app/config/radarr.key";
+#          HOMEPAGE_FILE_JELLYFIN_KEY = "/app/config/jellyfin.key";
         };
         environmentFiles = [
 #          config.age.secrets.paperless.path

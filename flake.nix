@@ -92,7 +92,7 @@
                     # ./services/jellyfin
                      ./services/vaultwarden
                      ./services/monitoring
-                     ./services/kiwix
+#                     ./services/kiwix
                     # ./services/pingvin-share
                     # #./services/scrutiny
                      ./services/homepage
