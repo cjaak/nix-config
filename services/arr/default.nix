@@ -60,7 +60,7 @@ system.activationScripts.recyclarr_configure = ''
         environment = {
           TZ = vars.timeZone;
           PUID = "994";
-          GUID = "993";
+          PGID = "993";
           UMASK = "002";
         };
       };
@@ -83,7 +83,7 @@ system.activationScripts.recyclarr_configure = ''
         environment = {
           TZ = vars.timeZone;
           PUID = "994";
-          GUID = "993";
+          PGID = "993";
           UMASK = "002";
         };
       };
@@ -111,13 +111,12 @@ system.activationScripts.recyclarr_configure = ''
         environment = {
           TZ = vars.timeZone;
           PUID = "994";
-          GUID = "993";
+          PGID = "993";
           UMASK = "002";
         };
       };
       booksonic = {
         image = "lscr.io/linuxserver/booksonic-air";
-        user = "994:993";
         autoStart = true;
         extraOptions = [
           "-l=traefik.enable=true"
@@ -136,7 +135,7 @@ system.activationScripts.recyclarr_configure = ''
         environment = {
           TZ = vars.timeZone;
           PUID = "994";
-          GUID = "993";
+          PGID = "993";
           CONTEXT_PATH = "/";
           UMASK = "002";
         };
