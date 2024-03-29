@@ -51,9 +51,9 @@ directories = [
           PUID = "994";
           GUID = "993";
         };
-#        environmentFiles = [
-#          config.age.secrets.pingvinCloudflared.path
-#        ];
+        environmentFiles = [
+          config.age.secrets.pingvinCloudflared.path
+        ];
       };
     };
 };
