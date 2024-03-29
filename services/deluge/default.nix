@@ -66,6 +66,7 @@ directories = [
         environment = {
           VPN_TYPE = "wireguard";
           VPN_SERVICE_PROVIDER =  "custom";
+          FIREWALL_DEBUG = "on";
         };
       };
     };
