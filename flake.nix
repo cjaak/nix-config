@@ -89,7 +89,7 @@
                      ./services/traefik
                     # ./services/deluge
                      ./services/arr
-                    # ./services/jellyfin
+                     ./services/jellyfin
                      ./services/vaultwarden
                      ./services/monitoring
 #                     ./services/kiwix
