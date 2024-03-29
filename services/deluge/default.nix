@@ -65,6 +65,7 @@ directories = [
         environment = {
           VPN_TYPE = "wireguard";
           VPN_SERVICE_PROVIDER =  "custom";
+          DNS_ADDRESS = "1.1.1.1";
         };
       };
     };
