@@ -59,9 +59,9 @@
   # age.secrets.icloudDriveUsername = lib.mkDefault {
   #     file = ./icloudDriveUsername.age;
   #     };
-  # age.secrets.pingvinCloudflared = lib.mkDefault {
-  #     file = ./pingvinCloudflared.age;
-  #     };
+   age.secrets.pingvinCloudflared = lib.mkDefault {
+       file = ./pingvinCloudflared.age;
+       };
    age.secrets.jellyfinApiKey = lib.mkDefault {
        file = ./jellyfinApiKey.age;
        };
