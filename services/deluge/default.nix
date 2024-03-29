@@ -64,7 +64,7 @@ directories = [
         ];
         environment = {
           VPN_TYPE = "wireguard";
-          VPN_SERVICE_PROVIDER =  "nordvpn";
+          VPN_SERVICE_PROVIDER =  "custom";
         };
       };
     };
