@@ -45,10 +45,10 @@ users.users.charlie.extraGroups = ["share"];
 
 systemd.tmpfiles.rules = map (x: "d ${x.path} 0777 share share - -") (lib.attrValues smb.share_list) ++ ["d /mnt 0775 share share - -"];
 
-#system.activationScripts.samba_user_create = ''
-#    smb_password=$(cat "${config.age.secrets.sambaPassword.path}")
-#    echo -e "$smb_password\n$smb_password\n" | /run/current-system/sw/bin/smbpasswd -a -s share
-#    '';
+system.activationScripts.samba_user_create = ''
+    smb_password=$(cat "${config.age.secrets.sambaPassword.path}")
+    echo -e "$smb_password\n$smb_password\n" | /run/current-system/sw/bin/smbpasswd -a -s share
+    '';
 
 networking.firewall = {
   allowedTCPPorts = [ 5357 ];
@@ -66,8 +66,7 @@ services.samba = {
     workgroup = WORKGROUP
     server string = nixos-server
     netbios name = nixos-server
-    security = user 
-    hosts allow = 192.168.2.0/24 192.168.3.135/32 10.4.0.0/24
+    security = user
     guest account = nobody
     map to guest = bad user
     passdb backend = tdbsam

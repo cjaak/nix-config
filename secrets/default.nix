@@ -5,9 +5,9 @@
   age.secrets.hashedUserPassword = lib.mkDefault {
     file = ./hashedUserPassword.age;
   };
-  # age.secrets.sambaPassword = lib.mkDefault {
-  #   file = ./sambaPassword.age;
-  #   };
+   age.secrets.sambaPassword = lib.mkDefault {
+     file = ./sambaPassword.age;
+     };
   # age.secrets.telegramApiKey = lib.mkDefault {
   #   file = ./telegramApiKey.age;
   #   };
