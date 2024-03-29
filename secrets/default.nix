@@ -17,9 +17,9 @@
   age.secrets.smtpPassword = lib.mkDefault {
     file = ./smtpPassword.age;
   };
-  # age.secrets.wireguardCredentials = lib.mkDefault {
-  #     file = ./wireguardCredentials.age;
-  #   };
+   age.secrets.wireguardCredentials = lib.mkDefault {
+       file = ./wireguardCredentials.age;
+     };
    age.secrets.cloudflareDnsApiCredentials = lib.mkDefault {
        file = ./cloudflareDnsApiCredentials.age;
      };
@@ -44,9 +44,9 @@
   # age.secrets.resticPassword = lib.mkDefault {
   #     file = ./resticPassword.age;
   #   };
-  # age.secrets.wireguardPrivateKey = lib.mkDefault {
-  #     file = ./wireguardPrivateKey.age;
-  #   };
+#   age.secrets.wireguardPrivateKey = lib.mkDefault {
+#       file = ./wireguardPrivateKey.age;
+#     };
   # age.secrets.wireguardPrivateKeyAlison = lib.mkDefault {
   #     file = ./wireguardPrivateKeyAlison.age;
   #   };
@@ -62,9 +62,9 @@
   # age.secrets.pingvinCloudflared = lib.mkDefault {
   #     file = ./pingvinCloudflared.age;
   #     };
-  # age.secrets.jellyfinApiKey = lib.mkDefault {
-  #     file = ./jellyfinApiKey.age;
-  #     };
+   age.secrets.jellyfinApiKey = lib.mkDefault {
+       file = ./jellyfinApiKey.age;
+       };
   # age.secrets.duckDNSDomain = lib.mkDefault {
   #     file = ./duckDNSDomain.age;
   #     };
