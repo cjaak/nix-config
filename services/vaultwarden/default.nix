@@ -5,7 +5,7 @@ directories = [
 ];
   in
 {
-  systemd.tmpfiles.rules = map (x: "d ${x} 0775 share share - -") directories;
+  systemd.tmpfiles.rules = map (x: "d ${x} 0777 share share - -") directories;
   virtualisation.oci-containers = {
     containers = {
       vaultwarden = {
