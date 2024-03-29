@@ -16,8 +16,8 @@ directories = [
 
 system.activationScripts.recyclarr_configure = ''
     sed=${pkgs.gnused}/bin/sed
-    configFile=${vars.serviceConfigRoot}/recyclarr/recyclarr.yml
-    sonarr="${inputs.recyclarr-configs}/sonarr/web-2160p-v4.yml"
+    configFile=${vars.serviceConfigRoot}/recyclarr/templates/recyclarr.yml
+    sonarr="${inputs.recyclarr-configs}/sonarr/templates/web-2160p-v4.yml"
     sonarrApiKey=$(cat "${config.age.secrets.sonarrApiKey.path}")
     radarr="${inputs.recyclarr-configs}/radarr/remux-web-2160p.yml"
     radarrApiKey=$(cat "${config.age.secrets.radarrApiKey.path}")

@@ -32,14 +32,14 @@ homepageCustomCss = pkgs.writeTextFile {
 
   networking.firewall.allowedTCPPorts = [ 61208 ];
 
-  systemd.services.glances = {
-    description = "Glances";
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      ExecStart = "${pkgs.glances}/bin/glances -w";
-      Type = "simple";
-    };
-  };
+#  systemd.services.glances = {
+#    description = "Glances";
+#    wantedBy = [ "multi-user.target" ];
+#    serviceConfig = {
+#      ExecStart = "${pkgs.glances}/bin/glances -w";
+#      Type = "simple";
+#    };
+#  };
 
   systemd.tmpfiles.rules = map (x: "d ${x} 0775 share share - -") directories;
   virtualisation.oci-containers = {

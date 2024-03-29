@@ -124,7 +124,7 @@
   };
 
   fileSystems.${vars.slowArray} = 
-  { device = "/mnt/data*";
+  { device = "/mnt/data1:/mnt/data2";
     options = [
       "defaults"
       "allow_other"
