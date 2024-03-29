@@ -36,7 +36,7 @@ directories = [
         environment = {
           TZ = vars.timeZone;
           PUID = "994";
-          GUID = "993";
+          PGID = "993";
         };
       };
       gluetun = {
