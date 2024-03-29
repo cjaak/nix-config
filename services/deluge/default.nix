@@ -46,6 +46,7 @@ directories = [
         "--cap-add=NET_ADMIN"
         "-l=traefik.enable=true"
         "-l=traefik.http.routers.deluge.rule=Host(`deluge.${vars.domainName}`)"
+        "-l=traefik.http.routers.deluge.service=deluge"
         "-l=traefik.http.services.deluge.loadbalancer.server.port=8112"
         "--device=/dev/net/tun:/dev/net/tun"
         "-l=homepage.group=Arr"
@@ -65,7 +66,6 @@ directories = [
         environment = {
           VPN_TYPE = "wireguard";
           VPN_SERVICE_PROVIDER =  "custom";
-          DNS_ADDRESS = "1.1.1.1";
         };
       };
     };
