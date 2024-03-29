@@ -88,7 +88,7 @@
 
   environment.systemPackages = with pkgs; [
     pciutils
-    glances
+#    glances
     hdparm
     hd-idle
     hddtemp
