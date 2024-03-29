@@ -38,7 +38,6 @@ system.activationScripts.recyclarr_configure = ''
     containers = {
       sonarr = {
         image = "lscr.io/linuxserver/sonarr:develop";
-        user = "994:993";
         autoStart = true;
         extraOptions = [
           "-l=traefik.enable=true"
@@ -67,7 +66,6 @@ system.activationScripts.recyclarr_configure = ''
       };
       prowlarr = {
         image = "binhex/arch-prowlarr";
-        user = "994:993";
         autoStart = true;
         extraOptions = [
           "-l=traefik.enable=true"
@@ -91,7 +89,6 @@ system.activationScripts.recyclarr_configure = ''
       };
       radarr = {
         image = "lscr.io/linuxserver/radarr";
-        user = "994:993";
         autoStart = true;
         extraOptions = [
           "-l=traefik.enable=true"
