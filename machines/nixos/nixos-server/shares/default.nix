@@ -43,7 +43,7 @@ environment.systemPackages = [ config.services.samba.package ];
 
 users.users.charlie.extraGroups = ["share"];
 
-systemd.tmpfiles.rules = map (x: "d ${x.path} 0775 share share - -") (lib.attrValues smb.share_list) ++ ["d /mnt 0775 share share - -"];
+systemd.tmpfiles.rules = map (x: "d ${x.path} 0777 share share - -") (lib.attrValues smb.share_list) ++ ["d /mnt 0775 share share - -"];
 
 #system.activationScripts.samba_user_create = ''
 #    smb_password=$(cat "${config.age.secrets.sambaPassword.path}")
