@@ -67,6 +67,8 @@ directories = [
           VPN_TYPE = "wireguard";
           VPN_SERVICE_PROVIDER =  "custom";
           FIREWALL_DEBUG = "on";
+          WIREGUARD_MTU = "1300";
+          FIREWALL_VPN_INPUT_PORTS=6881;
         };
       };
     };
