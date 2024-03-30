@@ -20,6 +20,9 @@ directories = [
 #        ];
         extraOptions = [
 #        "--network=container:pingvin-cloudflared"
+        "-l=traefik.enable=true"
+        "-l=traefik.http.routers.pingvin-share.rule=Host(`share.${vars.domainName}`)"
+        "-l=traefik.http.services.pingvin-share.loadbalancer.server.port=3080"
         "-l=homepage.group=Services"
         "-l=homepage.name=pingvin-share"
         "-l=homepage.icon=pingvin-share.svg"
