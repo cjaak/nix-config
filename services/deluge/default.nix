@@ -34,7 +34,7 @@ directories = [
           "${vars.serviceConfigRoot}/deluge:/config"
         ];
         environment = {
-          LOG_LEVEL = "debug";
+          DELUGE_LOGLEVEL = "debug";
           TZ = vars.timeZone;
           PUID = "994";
           PGID = "993";
