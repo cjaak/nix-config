@@ -94,7 +94,7 @@
                      ./services/vaultwarden
                      ./services/monitoring
 #                     ./services/kiwix
-#                     ./services/pingvin-share
+                     ./services/pingvin-share
                     # #./services/scrutiny
                      ./services/homepage
 
