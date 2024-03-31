@@ -26,7 +26,6 @@ directories = [
         "-l=homepage.href=https://qbittorrent.${vars.domainName}"
         "-l=homepage.description=Torrent client"
         "-l=homepage.widget.type=qbittorrent"
-        "-l=homepage.widget.password=qbittorrent"
         "-l=homepage.widget.url=http://gluetun:8080"
         ];
         volumes = [
