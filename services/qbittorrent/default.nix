@@ -31,7 +31,7 @@ directories = [
         "-l=homepage.widget.url=http://gluetun:8080"
         ];
         volumes = [
-          "${vars.mainArray}/Media/Downloads:/data/completed"
+          "${vars.mainArray}/Media/Downloads:/downloads"
           "${vars.serviceConfigRoot}/qbittorrent:/config"
         ];
         environment = {
