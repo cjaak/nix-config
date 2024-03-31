@@ -1,6 +1,7 @@
 { config, vars, ... }:
 let
 directories = [
+"${vars.serviceConfigRoot}/qbittorrent"
 "${vars.serviceConfigRoot}/radarr"
 "${vars.serviceConfigRoot}/prowlarr"
 "${vars.serviceConfigRoot}/recyclarr"
@@ -25,13 +26,13 @@ directories = [
         "-l=homepage.href=https://qbittorrent.${vars.domainName}"
         "-l=homepage.description=Torrent client"
         "-l=homepage.widget.type=qbittorrent"
-        "-l=homepage.widget.username=charlie"
+        "-l=homepage.widget.username=admin"
         "-l=homepage.widget.password=qbittorrent"
         "-l=homepage.widget.url=http://gluetun:8080"
         ];
         volumes = [
           "${vars.mainArray}/Media/Downloads:/data/completed"
-          "${vars.serviceConfigRoot}:/config"
+          "${vars.serviceConfigRoot}/qbittorrent:/config"
         ];
         environment = {
           WEB_UI_PORT = "8080";
