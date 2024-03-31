@@ -153,7 +153,7 @@ system.activationScripts.recyclarr_configure = ''
           "-l=homepage.icon=readarr.png"
           "-l=homepage.href=https://readarr.${vars.domainName}"
           "-l=homepage.description=Book Tracker"
-          "-l=homepage.widget.type=radarr"
+          "-l=homepage.widget.type=readarr"
           "-l=homepage.widget.key={{HOMEPAGE_FILE_READARR_KEY}}"
           "-l=homepage.widget.url=http://readarr:8787"
         ];
