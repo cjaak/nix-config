@@ -10,6 +10,7 @@ directories = [
 "${vars.mainArray}/Media/TV"
 "${vars.mainArray}/Media/Movies"
 "${vars.mainArray}/Media/Audiobooks"
+"${vars.mainArray}/Media/Books"
 ];
   in
   {
@@ -130,6 +131,31 @@ system.activationScripts.recyclarr_configure = ''
         ];
         volumes = [
             "${vars.mainArray}/Media/Audiobooks:/audiobooks"
+            "${vars.serviceConfigRoot}/booksonic:/config"
+        ];
+        environment = {
+          TZ = vars.timeZone;
+          PUID = "994";
+          PGID = "993";
+          CONTEXT_PATH = "/";
+          UMASK = "002";
+        };
+      };
+      readarr = {
+        image = "lscr.io/linuxserver/readarr";
+        autoStart = true;
+        extraOptions = [
+          "-l=traefik.enable=true"
+          "-l=traefik.http.routers.readarr.rule=Host(`readarr.${vars.domainName}`)"
+          "-l=traefik.http.services.readarr.loadbalancer.server.port=8787"
+          "-l=homepage.group=Arr"
+          "-l=homepage.name=Readarr"
+          "-l=homepage.icon=readarr.png"
+          "-l=homepage.href=https://readarr.${vars.domainName}"
+          "-l=homepage.description=Book Tracker"
+        ];
+        volumes = [
+            "${vars.mainArray}/Media/Books:/books"
             "${vars.serviceConfigRoot}/booksonic:/config"
         ];
         environment = {
