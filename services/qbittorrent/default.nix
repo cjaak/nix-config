@@ -51,12 +51,12 @@ directories = [
         "-l=traefik.http.services.qbittorrent.loadbalancer.server.port=8080"
         "--device=/dev/net/tun:/dev/net/tun"
         "-l=homepage.group=Arr"
-        "-l=homepage.name=Qbittorrent"
-        "-l=homepage.icon=qbittorrent.svg"
+        "-l=homepage.name=Gluetun"
+        "-l=homepage.icon=gluetun.svg"
         "-l=homepage.href=https://qbittorrent.${vars.domainName}"
         "-l=homepage.description=VPN killswitch"
-        "-l=homepage.widget.type=qbittorrent"
-        "-l=homepage.widget.url=http://qbittorrent:8000"
+        "-l=homepage.widget.type=gluetun"
+        "-l=homepage.widget.url=http://gluetun:8000"
         ];
         ports = [
           "127.0.0.1:8083:8000"
