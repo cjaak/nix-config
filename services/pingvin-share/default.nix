@@ -15,11 +15,11 @@ directories = [
       pingvin-share = {
         image = "stonith404/pingvin-share:latest";
         autoStart = true;
-#        dependsOn = [
-#          "pingvin-cloudflared"
-#        ];
+        dependsOn = [
+          "pingvin-cloudflared"
+        ];
         extraOptions = [
-#        "--network=container:pingvin-cloudflared"
+        "--network=container:pingvin-cloudflared"
         "-l=traefik.enable=true"
         "-l=traefik.http.routers.pingvin-share.rule=Host(`share.${vars.domainName}`)"
         "-l=traefik.http.services.pingvin-share.loadbalancer.server.port=3000"
@@ -41,23 +41,23 @@ directories = [
           GUID = "993";
         };
       };
-#      pingvin-cloudflared = {
-#        image = "cloudflare/cloudflared:latest";
-#        autoStart = true;
-#        cmd = [
-#        "tunnel"
-#        "--no-autoupdate"
-#        "run"
-#        ];
-#        environment = {
-#          TZ = vars.timeZone;
-#          PUID = "994";
-#          GUID = "993";
-#        };
-#        environmentFiles = [
-#          config.age.secrets.pingvinCloudflared.path
-#        ];
-#      };
+      pingvin-cloudflared = {
+        image = "cloudflare/cloudflared:latest";
+        autoStart = true;
+        cmd = [
+        "tunnel"
+        "--no-autoupdate"
+        "run"
+        ];
+        environment = {
+          TZ = vars.timeZone;
+          PUID = "994";
+          GUID = "993";
+        };
+        environmentFiles = [
+          config.age.secrets.pingvinCloudflared.path
+        ];
+      };
     };
 };
 }
