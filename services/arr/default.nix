@@ -155,7 +155,7 @@ system.activationScripts.recyclarr_configure = ''
           "-l=homepage.description=Book Tracker"
           "-l=homepage.widget.type=radarr"
           "-l=homepage.widget.key={{HOMEPAGE_FILE_READARR_KEY}}"
-          "-l=homepage.widget.url=http://radarr:8787"
+          "-l=homepage.widget.url=http://readarr:8787"
         ];
         volumes = [
             "${vars.mainArray}/Media/Books:/books"
