@@ -1,7 +1,7 @@
 { config, vars, ... }:
 let
 directories = [
-"${vars.serviceConfigRoot}/qbittorrent"
+"${vars.serviceConfigRoot}/qBittorrent"
 "${vars.serviceConfigRoot}/radarr"
 "${vars.serviceConfigRoot}/prowlarr"
 "${vars.serviceConfigRoot}/recyclarr"
@@ -31,7 +31,7 @@ directories = [
         ];
         volumes = [
           "${vars.mainArray}/Media/Downloads:/data/completed"
-          "${vars.serviceConfigRoot}/qbittorrent:/config"
+          "${vars.serviceConfigRoot}/qBittorrent:/config"
         ];
         environment = {
           WEB_UI_PORT = "8080";
