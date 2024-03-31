@@ -142,7 +142,7 @@ system.activationScripts.recyclarr_configure = ''
         };
       };
       readarr = {
-        image = "lscr.io/linuxserver/readarr";
+        image = "lscr.io/linuxserver/readarr:develop";
         autoStart = true;
         extraOptions = [
           "-l=traefik.enable=true"
