@@ -63,12 +63,14 @@ homepageCustomCss = pkgs.writeTextFile {
           "/var/run/podman/podman.sock:/var/run/docker.sock:ro"
           "${config.age.secrets.sonarrApiKey.path}:/app/config/sonarr.key"
           "${config.age.secrets.radarrApiKey.path}:/app/config/radarr.key"
+          "${config.age.secrets.readarrApiKey.path}:/app/config/readarr.key"
           "${config.age.secrets.jellyfinApiKey.path}:/app/config/jellyfin.key"
         ];
         environment = {
           TZ = vars.timeZone;
           HOMEPAGE_FILE_SONARR_KEY = "/app/config/sonarr.key";
           HOMEPAGE_FILE_RADARR_KEY = "/app/config/radarr.key";
+          HOMEPAGE_FILE_READARR_KEY = "/app/config/readarr.key";
           HOMEPAGE_FILE_JELLYFIN_KEY = "/app/config/jellyfin.key";
         };
         environmentFiles = [

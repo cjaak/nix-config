@@ -12,6 +12,7 @@ in {
   "cloudflareDnsApiCredentials.age".publicKeys = allKeys;
   "invoiceNinja.age".publicKeys = allKeys;
   "radarrApiKey.age".publicKeys = allKeys;
+  "readarrApiKey.age".publicKeys = allKeys;
   "sonarrApiKey.age".publicKeys = allKeys;
   "tailscaleAuthKey.age".publicKeys = allKeys;
   "paperless.age".publicKeys = allKeys;

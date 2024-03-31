@@ -32,6 +32,9 @@
    age.secrets.sonarrApiKey = lib.mkDefault {
        file = ./sonarrApiKey.age;
      };
+   age.secrets.readarrApiKey = lib.mkDefault {
+       file = ./readarrApiKey.age;
+     };
   # age.secrets.tailscaleAuthKey = lib.mkDefault {
   #     file = ./sonarrApiKey.age;
   #   };

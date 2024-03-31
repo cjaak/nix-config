@@ -153,16 +153,19 @@ system.activationScripts.recyclarr_configure = ''
           "-l=homepage.icon=readarr.png"
           "-l=homepage.href=https://readarr.${vars.domainName}"
           "-l=homepage.description=Book Tracker"
+          "-l=homepage.widget.type=radarr"
+          "-l=homepage.widget.key={{HOMEPAGE_FILE_READARR_KEY}}"
+          "-l=homepage.widget.url=http://radarr:8787"
         ];
         volumes = [
             "${vars.mainArray}/Media/Books:/books"
+            "${vars.mainArray}/Media/Downloads:/downloads"
             "${vars.serviceConfigRoot}/booksonic:/config"
         ];
         environment = {
           TZ = vars.timeZone;
           PUID = "994";
           PGID = "993";
-          CONTEXT_PATH = "/";
           UMASK = "002";
         };
       };
