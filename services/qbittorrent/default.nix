@@ -27,7 +27,7 @@ directories = [
         "-l=homepage.description=Torrent client"
         "-l=homepage.widget.type=qbittorrent"
         "-l=homepage.widget.password=qbittorrent"
-        "-l=homepage.widget.url=http://gluetun:8112"
+        "-l=homepage.widget.url=http://gluetun:8080"
         ];
         volumes = [
           "${vars.mainArray}/Media/Downloads:/data/completed"
@@ -47,7 +47,7 @@ directories = [
         "-l=traefik.enable=true"
         "-l=traefik.http.routers.deluge.rule=Host(`qbittorrent.${vars.domainName}`)"
         "-l=traefik.http.routers.deluge.service=qbittorrent"
-        "-l=traefik.http.services.deluge.loadbalancer.server.port=8112"
+        "-l=traefik.http.services.deluge.loadbalancer.server.port=8080"
         "--device=/dev/net/tun:/dev/net/tun"
         "-l=homepage.group=Arr"
         "-l=homepage.name=Qbittorrent"

@@ -87,8 +87,8 @@
                     # ./services/paperless-ngx
                     # ./services/icloud-drive
                      ./services/traefik
-                     ./services/deluge
-#                     ./services/qbittorrent
+#                     ./services/deluge
+                     ./services/qbittorrent
                      ./services/arr
                      ./services/jellyfin
                      ./services/vaultwarden
