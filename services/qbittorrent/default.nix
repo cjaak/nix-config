@@ -34,6 +34,7 @@ directories = [
           "${vars.serviceConfigRoot}/qbittorrent:/config"
         ];
         environment = {
+          WEB_UI_PORT = "8080";
           TZ = vars.timeZone;
           PUID = "994";
           PGID = "993";
@@ -45,9 +46,9 @@ directories = [
         extraOptions = [
         "--cap-add=NET_ADMIN"
         "-l=traefik.enable=true"
-        "-l=traefik.http.routers.deluge.rule=Host(`qbittorrent.${vars.domainName}`)"
-        "-l=traefik.http.routers.deluge.service=qbittorrent"
-        "-l=traefik.http.services.deluge.loadbalancer.server.port=8080"
+        "-l=traefik.http.routers.qbittorrent.rule=Host(`qbittorrent.${vars.domainName}`)"
+        "-l=traefik.http.routers.qbittorrent.service=qbittorrent"
+        "-l=traefik.http.services.qbittorrent.loadbalancer.server.port=8080"
         "--device=/dev/net/tun:/dev/net/tun"
         "-l=homepage.group=Arr"
         "-l=homepage.name=Qbittorrent"
