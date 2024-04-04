@@ -53,7 +53,7 @@ in
           "-l=homepage.group=Media"
           "-l=homepage.name=Jellyseer"
           "-l=homepage.icon=jellyseerr.svg"
-          "-l=homepage.href=https://jellyfin.${vars.domainName}"
+          "-l=homepage.href=https://jellyseerr.${vars.domainName}"
           "-l=homepage.description=Media requests"
           "-l=homepage.widget.type=jellyseerr"
           "-l=homepage.widget.key={{HOMEPAGE_FILE_JELLYFIN_KEY}}"
@@ -62,7 +62,7 @@ in
         volumes = [
           "${vars.mainArray}/Media/TV:/data/tvshows"
           "${vars.mainArray}/Media/Movies:/data/movies"
-          "${vars.serviceConfigRoot}/jellyseerr:/config"
+          "${vars.serviceConfigRoot}/jellyseerr:/app/config"
         ];
         environment = {
           TZ = vars.timeZone;
