@@ -68,6 +68,9 @@
    age.secrets.jellyfinApiKey = lib.mkDefault {
        file = ./jellyfinApiKey.age;
        };
+   age.secrets.jellyseerrApiKey = lib.mkDefault {
+   file = ./jellyseerrApiKey.age;
+   };
   # age.secrets.duckDNSDomain = lib.mkDefault {
   #     file = ./duckDNSDomain.age;
   #     };

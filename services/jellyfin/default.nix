@@ -56,7 +56,7 @@ in
           "-l=homepage.href=https://jellyseerr.${vars.domainName}"
           "-l=homepage.description=Media requests"
           "-l=homepage.widget.type=jellyseerr"
-          "-l=homepage.widget.key={{HOMEPAGE_FILE_JELLYFIN_KEY}}"
+          "-l=homepage.widget.key={{HOMEPAGE_FILE_JELLYSEERR_KEY}}"
           "-l=homepage.widget.url=http://jellyseerr:5055"
         ];
         volumes = [

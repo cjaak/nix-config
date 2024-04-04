@@ -25,6 +25,7 @@ in {
   "icloudDriveUsername.age".publicKeys = allKeys;
   "pingvinCloudflared.age".publicKeys = allKeys;
   "jellyfinApiKey.age".publicKeys = allKeys;
+  "jellyseerrApiKey.age".publicKeys = allKeys;
   "duckDNSDomain.age".publicKeys = allKeys;
   "duckDNSToken.age".publicKeys = allKeys;
 }

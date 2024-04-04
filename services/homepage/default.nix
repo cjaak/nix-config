@@ -65,6 +65,7 @@ homepageCustomCss = pkgs.writeTextFile {
           "${config.age.secrets.radarrApiKey.path}:/app/config/radarr.key"
           "${config.age.secrets.readarrApiKey.path}:/app/config/readarr.key"
           "${config.age.secrets.jellyfinApiKey.path}:/app/config/jellyfin.key"
+          "${config.age.secrets.jellyseerrApiKey.path}:/app/config/jellyseerr.key"
         ];
         environment = {
           TZ = vars.timeZone;
@@ -72,6 +73,7 @@ homepageCustomCss = pkgs.writeTextFile {
           HOMEPAGE_FILE_RADARR_KEY = "/app/config/radarr.key";
           HOMEPAGE_FILE_READARR_KEY = "/app/config/readarr.key";
           HOMEPAGE_FILE_JELLYFIN_KEY = "/app/config/jellyfin.key";
+          HOMEPAGE_FILE_JELLYSEERR_KEY = "/app/config/jellyseerr.key";
         };
         environmentFiles = [
 #          config.age.secrets.paperless.path
