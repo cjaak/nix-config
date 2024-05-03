@@ -17,7 +17,7 @@ in
     after = [ "podman-paperless.service" ];
   };
   };
-  systemd.tmpfiles.rules = map (x: "d ${x} 0775 share share - -") directories;
+  systemd.tmpfiles.rules = map (x: "d ${x} 0777 share share - -") directories;
 
   networking.firewall.allowedTCPPorts = [ 
   8080 # WebDAV
@@ -36,7 +36,7 @@ in
     auth = true;
     users = [
       {
-        username = "notthebee";
+        username = "charlie";
         password = "{env}PASSWORD";
       }
     ];
@@ -60,7 +60,7 @@ in
           "-l=homepage.href=https://paperless.${vars.domainName}"
           "-l=homepage.description=Digital document database"
           "-l=homepage.widget.type=paperlessngx"
-          "-l=homepage.widget.key={{HOMEPAGE_VAR_PAPERLESS_TOKEN}}"
+#          "-l=homepage.widget.key={{HOMEPAGE_VAR_PAPERLESS_TOKEN}}"
           "-l=homepage.widget.url=http://paperless:8000"
         ];
         volumes = [
@@ -78,7 +78,7 @@ in
           PAPERLESS_FILENAME_FORMAT = "{created}-{correspondent}-{title}";
           PAPERLESS_TIME_ZONE = "${vars.timeZone}";
           PAPERLESS_URL = "https://paperless.${vars.domainName}";
-          PAPERLESS_ADMIN_USER = "notthebee";
+          PAPERLESS_ADMIN_USER = "charlie";
           PAPERLESS_CONSUMER_POLLING = "1";
           PAPERLESS_SECRET_KEY = "changeme";
           USERMAP_UID = "994";
