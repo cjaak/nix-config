@@ -1,7 +1,7 @@
 { config, vars, ... }:
 let
 directories = [
-"${vars.serviceConfigRoot}/paperless"
+"${vars.serviceConfigRoot}/paperless/data"
 "${vars.cacheArray}/Documents"
 "${vars.cacheArray}/Documents/Paperless"
 "${vars.cacheArray}/Documents/Paperless/Documents"
