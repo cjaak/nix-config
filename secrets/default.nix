@@ -38,9 +38,9 @@
   # age.secrets.tailscaleAuthKey = lib.mkDefault {
   #     file = ./sonarrApiKey.age;
   #   };
-  # age.secrets.paperless = lib.mkDefault {
-  #     file = ./paperless.age;
-  #   };
+   age.secrets.paperless = lib.mkDefault {
+       file = ./paperless.age;
+     };
   # age.secrets.resticBackblazeEnv = lib.mkDefault {
   #     file = ./resticBackblazeEnv.age;
   #   };

@@ -70,7 +70,7 @@ in
           "${vars.serviceConfigRoot}/paperless/data:/usr/src/paperless/data"
         ];
         environmentFiles = [
-#          config.age.secrets.paperless.path
+          config.age.secrets.paperless.path
         ];
         environment = {
           PAPERLESS_REDIS = "redis://paperless-redis:6379";
