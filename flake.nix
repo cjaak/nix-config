@@ -84,7 +84,7 @@
 
                     # # Services and applications
                     # ./services/invoiceninja
-                    # ./services/paperless-ngx
+                     ./services/paperless-ngx
                     # ./services/icloud-drive
                      ./services/traefik
 #                     ./services/deluge
