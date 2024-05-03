@@ -60,7 +60,7 @@ in
           "-l=homepage.href=https://paperless.${vars.domainName}"
           "-l=homepage.description=Digital document database"
           "-l=homepage.widget.type=paperlessngx"
-#          "-l=homepage.widget.key={{HOMEPAGE_VAR_PAPERLESS_TOKEN}}"
+          "-l=homepage.widget.key={{HOMEPAGE_VAR_PAPERLESS_TOKEN}}"
           "-l=homepage.widget.url=http://paperless:8000"
         ];
         volumes = [

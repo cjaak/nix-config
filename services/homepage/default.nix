@@ -76,7 +76,7 @@ homepageCustomCss = pkgs.writeTextFile {
           HOMEPAGE_FILE_JELLYSEERR_KEY = "/app/config/jellyseerr.key";
         };
         environmentFiles = [
-#          config.age.secrets.paperless.path
+          config.age.secrets.paperless.path
         ];
       };
     };
