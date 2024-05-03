@@ -1,4 +1,5 @@
 { config, vars, ... }:
+
 let
   # Define directories for persistent storage
   directories = [
