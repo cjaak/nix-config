@@ -18,7 +18,6 @@ in
     containers = {
       ryot-db = {
         image = "docker.io/postgres:16-alpine";
-        restartPolicy = "unless-stopped";
         volumes = [
           "${vars.serviceConfigRoot}/ryot/data:/var/lib/postgresql/data"
         ];
