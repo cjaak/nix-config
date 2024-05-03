@@ -31,7 +31,6 @@ in
 
       ryot = {
         image = "ghcr.io/ignisda/ryot:latest";
-        pullPolicy = "always";
         ports = [
           "8000:8000"
         ];
