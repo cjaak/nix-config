@@ -87,7 +87,9 @@
                      ./services/paperless-ngx
                     # ./services/icloud-drive
                      ./services/traefik
-                      ./services/ryot
+                     ./services/minecraft
+#                      ./services/ryot
+
 #                     ./services/deluge
                      ./services/qbittorrent
                      ./services/arr
