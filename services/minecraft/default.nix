@@ -6,7 +6,7 @@ let
   ];
 in
 {
-  systemd.tmpfiles.rules = map (x: "d ${x} 0777 minecraft minecraft - -") directories;
+  systemd.tmpfiles.rules = map (x: "d ${x} 0777 share share - -") directories;
 
   virtualisation.oci-containers = {
     containers = {
@@ -34,16 +34,4 @@ in
     };
   };
 
-  # Ensure proper permissions and ownership of the Minecraft server directory
-  services.oci-containers.rootless = {
-    enable = true;
-    users = {
-      minecraft = {
-        subuidStart = 100000;
-        subuidCount = 65536;
-        subgidStart = 100000;
-        subgidCount = 65536;
-      };
-    };
-  };
 }
