@@ -19,6 +19,7 @@ directories = [
           "gluetun"
         ];
         extraOptions = [
+        "--pull=newer"
         "--network=container:gluetun"
         "-l=homepage.group=Arr"
         "-l=homepage.name=qbittorent"
@@ -45,6 +46,7 @@ directories = [
         image = "qmcgaw/gluetun:latest";
         autoStart = true;
         extraOptions = [
+        "--pull=newer"
         "--cap-add=NET_ADMIN"
         "-l=traefik.enable=true"
         "-l=traefik.http.routers.qbittorrent.rule=Host(`qbittorrent.${vars.domainName}`)"

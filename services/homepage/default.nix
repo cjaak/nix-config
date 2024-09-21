@@ -48,6 +48,7 @@ homepageCustomCss = pkgs.writeTextFile {
         image = "ghcr.io/gethomepage/homepage:latest";
         autoStart = true;
         extraOptions = [
+        "--pull=newer"
         "-l=traefik.enable=true"
         "-l=traefik.http.routers.home.rule=Host(`${vars.domainName}`)"
         "-l=traefik.http.services.home.loadbalancer.server.port=3000"

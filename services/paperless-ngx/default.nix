@@ -49,6 +49,7 @@ in
         image = "ghcr.io/paperless-ngx/paperless-ngx";
         autoStart = true;
         extraOptions = [
+          "--pull=newer"
           "--device=/dev/dri/renderD128:/dev/dri/renderD128"
           "--device=/dev/dri/card0:/dev/dri/card0"
           "-l=traefik.enable=true"

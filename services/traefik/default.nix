@@ -38,6 +38,7 @@ in
 
         ];
         extraOptions = [
+          "--pull=newer"
           # Proxying Traefik itself
           "-l=traefik.enable=true"
           "-l=traefik.http.routers.traefik.rule=Host(`proxy.${vars.domainName}`)"

@@ -19,6 +19,7 @@ directories = [
           "pingvin-cloudflared"
         ];
         extraOptions = [
+        "--pull=newer"
         "--network=container:pingvin-cloudflared"
         "-l=traefik.enable=true"
         "-l=traefik.http.routers.pingvin-share.rule=Host(`share.${vars.domainName}`)"
