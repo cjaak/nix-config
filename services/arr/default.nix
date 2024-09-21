@@ -41,6 +41,7 @@ system.activationScripts.recyclarr_configure = ''
         image = "lscr.io/linuxserver/sonarr:develop";
         autoStart = true;
         extraOptions = [
+          "--pull=newer"
           "-l=traefik.enable=true"
           "-l=traefik.http.routers.sonarr.rule=Host(`sonarr.${vars.domainName}`)"
           "-l=traefik.http.services.sonarr.loadbalancer.server.port=8989"
@@ -69,6 +70,7 @@ system.activationScripts.recyclarr_configure = ''
         image = "binhex/arch-prowlarr";
         autoStart = true;
         extraOptions = [
+          "--pull=newer"
           "-l=traefik.enable=true"
           "-l=traefik.http.routers.prowlarr.rule=Host(`prowlarr.${vars.domainName}`)"
           "-l=traefik.http.services.prowlarr.loadbalancer.server.port=9696"
@@ -92,6 +94,7 @@ system.activationScripts.recyclarr_configure = ''
         image = "lscr.io/linuxserver/radarr";
         autoStart = true;
         extraOptions = [
+          "--pull=newer"
           "-l=traefik.enable=true"
           "-l=traefik.http.routers.radarr.rule=Host(`radarr.${vars.domainName}`)"
           "-l=traefik.http.services.radarr.loadbalancer.server.port=7878"
@@ -120,6 +123,7 @@ system.activationScripts.recyclarr_configure = ''
         image = "lscr.io/linuxserver/booksonic-air";
         autoStart = true;
         extraOptions = [
+          "--pull=newer"
           "-l=traefik.enable=true"
           "-l=traefik.http.routers.booksonic.rule=Host(`booksonic.${vars.domainName}`)"
           "-l=traefik.http.services.booksonic.loadbalancer.server.port=4040"
@@ -145,6 +149,7 @@ system.activationScripts.recyclarr_configure = ''
         image = "lscr.io/linuxserver/readarr:develop";
         autoStart = true;
         extraOptions = [
+          "--pull=newer"
           "-l=traefik.enable=true"
           "-l=traefik.http.routers.readarr.rule=Host(`readarr.${vars.domainName}`)"
           "-l=traefik.http.services.readarr.loadbalancer.server.port=8787"

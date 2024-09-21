@@ -15,6 +15,7 @@ in
         image = "lscr.io/linuxserver/jellyfin";
         autoStart = true;
         extraOptions = [
+          "--pull=newer"
           "--device=/dev/dri/renderD128:/dev/dri/renderD128"
           "-l=traefik.enable=true"
           "-l=traefik.http.routers.jellyfin.rule=Host(`jellyfin.${vars.domainName}`)"
