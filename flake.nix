@@ -87,7 +87,7 @@
                      ./services/paperless-ngx
                     # ./services/icloud-drive
                      ./services/traefik
-                     ./services/minecraft
+                    #  ./services/minecraft
 #                      ./services/ryot
 
 #                     ./services/deluge
