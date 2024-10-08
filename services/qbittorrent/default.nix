@@ -69,7 +69,7 @@ directories = [
         ];
         environment = {
           VPN_TYPE = "wireguard";
-          VPN_SERVICE_PROVIDER =  "custom";
+          VPN_SERVICE_PROVIDER =  "mullvad";
           FIREWALL_DEBUG = "on";
           WIREGUARD_MTU = "1300";
           FIREWALL_VPN_INPUT_PORTS="6881";
