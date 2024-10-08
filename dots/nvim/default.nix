@@ -1,9 +1,10 @@
 { inputs, lib, config, pkgs, ... }:
 let
-coc = import ./coc.nix;
+  coc = import ./coc.nix;
 in
 {
-  imports = [ inputs.nixvim.homeManagerModules.nixvim
+  imports = [
+    inputs.nixvim.homeManagerModules.nixvim
   ];
 
 
@@ -11,7 +12,6 @@ in
     figlet
     nodejs
     ripgrep
-#    rnix-lsp
   ];
 
   programs.neovim = {
@@ -22,19 +22,29 @@ in
 
   xdg.configFile = {
     "nvim/coc-settings.json" = {
-      source = builtins.toFile "coc-settings.json" (builtins.toJSON (coc { homeDir = config.xdg.configHome; }));
+      source = pkgs.writeText "coc-settings.json" (builtins.toJSON (coc { homeDir = config.xdg.configHome; pkgs = pkgs; }));
     };
   };
 
   programs.nixvim = {
     enable = true;
-    colorschemes.nord.enable = true;
+    colorschemes.nord = {
+      enable = true;
+      settings = {
+        borders = true;
+        contrast = true;
+      };
+    };
     plugins = {
       project-nvim = {
         enable = true;
       };
       telescope = {
         enable = true;
+      };
+      alpha = {
+        enable = true;
+        theme = "startify";
       };
       fugitive = {
         enable = true;
@@ -49,15 +59,13 @@ in
           ];
         };
       };
-      startify = {
-        enable = true;
-        customHeader = "startify#pad(split(system('figlet -f larry3d neovim'), '\n'))";
-      };
       indent-blankline = {
         enable = true;
-        exclude.filetypes = [
-          "startify"
-        ];
+        settings = {
+          exclude.filetypes = [
+            "startify"
+          ];
+        };
       };
       barbar = {
         enable = true;
@@ -73,11 +81,12 @@ in
       };
     };
     extraPlugins = with pkgs.vimPlugins; [
+      llm-nvim
       ansible-vim
       coc-nvim
       vim-suda
     ];
-    options = {
+    opts = {
       number = true;
       syntax = "enable";
       fileencodings = "utf-8,sjis,euc-jp,latin";
@@ -85,7 +94,7 @@ in
       title = true;
       autoindent = true;
       background = "dark";
-      backup  = false;
+      backup = false;
       hlsearch = true;
       showcmd = true;
       cmdheight = 1;
@@ -115,16 +124,35 @@ in
     };
 
     autoCmd = [
-    {
-      event = [ "WinEnter" ];
-      pattern = [ "*" ];
-      command = "set cul";
-    }
-    {
-      event = [ "WinLeave" ];
-      pattern = [ "*" ];
-      command = "set nocul";
-    }
+      {
+        event = [ "InsertEnter" ];
+        pattern = [ "*" ];
+        command = "match EOLWS // | match EOLWSInsert /\\s\\+\\%#\\@<!$\\| \\+\\ze\\t/";
+      }
+      {
+        event = [ "InsertLeave" ];
+        pattern = [ "*" ];
+        command = "match EOLWS // | match EOLWSInsert /\\s\\+\\%#\\@<!$\\| \\+\\ze\\t/";
+      }
+      {
+        event = [
+          "WinEnter"
+          "BufWinEnter"
+          "WinNew"
+        ];
+        pattern = [ "*" ];
+        command = "match EOLWS /\\s\\+$\\| \\+\\ze\t/";
+      }
+      {
+        event = [ "WinEnter" ];
+        pattern = [ "*" ];
+        command = "set cul";
+      }
+      {
+        event = [ "WinLeave" ];
+        pattern = [ "*" ];
+        command = "set nocul";
+      }
     ];
     highlight = {
       BufferCurrent = {
@@ -168,13 +196,15 @@ in
       coc_global_extensions = [
         "coc-explorer"
         "@yaegassy/coc-ansible"
+        "@yaegassy/coc-nginx"
+        "coc-nil"
       ];
       suda_smart_edit = 1;
       "suda#nopass" = 1;
     };
     extraConfigLua = ''
       vim.api.nvim_set_hl(0, "MatchParen", { bg="#4c566a", fg="#88c0d0" })
-      '';
+    '';
     extraConfigVim = ''
       inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
       set undofile
@@ -184,12 +214,44 @@ in
         CocCommand explorer --toggle
           endif
           endfunction
-          '';
+    '';
     keymaps = [
       {
         mode = "n";
         key = "sf";
         action = "<cmd>CocCommand explorer<cr>";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = ";j";
+        action = "<Cmd>BufferPrevious<CR>";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = ";k";
+        action = "<Cmd>BufferNext<CR>";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = ";x";
+        action = "<Cmd>BufferClose<CR>";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = ";xx";
+        action = "<Cmd>BufferRestore<CR>";
         options = {
           silent = true;
         };
@@ -246,16 +308,8 @@ in
       }
       {
         mode = "n";
-        key = "\\";
-        action = ":call CheckForExplorer()<CR> <cmd>Telescope buffers<cr>";
-        options = {
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
         key = ";;";
-        action = ":call CheckForExplorer()<CR> <cmd>Telescope help_tags<cr>";
+        action = ":call CheckForExplorer()<CR> <cmd>Telescope buffers<cr>";
         options = {
           silent = true;
         };
