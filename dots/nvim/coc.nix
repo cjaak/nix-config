@@ -1,4 +1,4 @@
-{ homeDir }:
+{ homeDir, pkgs }:
 {
   eslint.autoFixOnSave = true;
   coc.preferences.colorSupport = false;
@@ -9,8 +9,19 @@
     "javascriptreact"
     "typescript"
     "typescriptreact"
+    "nix"
     #"ansible"
   ];
+  nil.server.path = "${pkgs.nil}/bin/nil";
+  nil.formatting.command = [ "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt" ];
+  nil.diagnostics.excludedFiles = [ "generated.nix" ];
+  nil.nix.flake.autoEvalInputs = false;
+  nil.nix.maxMemoryMB = 2048;
+  nil.nix.binary = "${pkgs.writeShellScript "nil-nix-wrapper" ''
+        nix --allow-import-from-derivation "$@"
+      ''}";
+  links.tooltip = true;
+  #semanticTokens.filetypes = [ "nix" ];
   suggest.completionItemKindLabels = {
     variable = "";
     constant = "";
@@ -40,12 +51,6 @@
   diagnostic.errorSign = "";
   diagnostic.infoSign = "";
   python.jediEnabled = false;
-#  languageserver = {
-#    nix = {
-#      command = "rnix-lsp";
-#      filetypes = ["nix"];
-#    };
-#  };
   ansible.dev.serverPath = "${homeDir}/.nix-profile/bin/ansible-language-server";
   ansible.builtin.isWithYamllint = true;
   ansible.disableProgressNotification = false;
