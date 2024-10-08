@@ -75,7 +75,7 @@ in
     extraPlugins = with pkgs.vimPlugins; [
       ansible-vim
       coc-nvim
-      suda-vim
+      vim-suda
     ];
     options = {
       number = true;
