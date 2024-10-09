@@ -2,6 +2,7 @@
 let
 directories = [
 "${vars.serviceConfigRoot}/qbittorrent"
+"${vars.serviceConfigRoot}/sabnzbd"
 "${vars.serviceConfigRoot}/radarr"
 "${vars.serviceConfigRoot}/prowlarr"
 "${vars.serviceConfigRoot}/recyclarr"
