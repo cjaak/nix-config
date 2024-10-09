@@ -27,6 +27,7 @@ directories = [
         "-l=homepage.icon=sabnzbd.svg"
         "-l=homepage.href=https://nzb.${vars.domainName}"
         "-l=homepage.description=Usenet client"
+        "-l=homepage.widget.url=http://gluetun:8080"
         ];
         volumes = [
           "${vars.mainArray}/Media/Downloads:/data/completed"
@@ -55,7 +56,7 @@ directories = [
         "-l=homepage.widget.type=qbittorrent"
         "-l=homepage.widget.username=admin"
         "-l=homepage.widget.password=qbittorrent"
-        "-l=homepage.widget.url=http://gluetun:8080"
+        "-l=homepage.widget.url=http://gluetun:8085"
         ];
         volumes = [
           "${vars.mainArray}/Media/Downloads:/downloads"
@@ -78,6 +79,9 @@ directories = [
         "-l=traefik.http.routers.qbittorrent.rule=Host(`qbittorrent.${vars.domainName}`)"
         "-l=traefik.http.routers.qbittorrent.service=qbittorrent"
         "-l=traefik.http.services.qbittorrent.loadbalancer.server.port=8080"
+        "-l=traefik.http.routers.sabnzbd.rule=Host(`nzb.${vars.domainName}`)"
+        "-l=traefik.http.routers.sabnzbd.service=sabnzbd"
+        "-l=traefik.http.services.sabnzbd.loadbalancer.server.port=8085"
         "--device=/dev/net/tun:/dev/net/tun"
         "-l=homepage.group=Arr"
         "-l=homepage.name=Gluetun"
