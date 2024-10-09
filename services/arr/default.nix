@@ -189,7 +189,7 @@ system.activationScripts.recyclarr_configure = ''
           "-l=homepage.href=https://bazarr.${vars.domainName}"
           "-l=homepage.description=Subtitle Tracker"
           "-l=homepage.widget.type=bazarr"
-#          "-l=homepage.widget.key={{HOMEPAGE_FILE_BAZAAR_KEY}}"
+          "-l=homepage.widget.key={{HOMEPAGE_FILE_BAZAAR_KEY}}"
           "-l=homepage.widget.url=http://bazarr:6767"
         ];
         volumes = [
