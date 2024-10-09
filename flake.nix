@@ -89,6 +89,8 @@
                      ./services/traefik
                     #  ./services/minecraft
 #                      ./services/ryot
+                     ./services/timetagger
+                     ./services/immich
                      ./services/grafana
 #                     ./services/deluge
                      ./services/qbittorrent
