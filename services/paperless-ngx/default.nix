@@ -51,7 +51,7 @@ in
         extraOptions = [
           "--pull=newer"
           "--device=/dev/dri/renderD128:/dev/dri/renderD128"
-          "--device=/dev/dri/card0:/dev/dri/card0"
+          "--device=/dev/dri/card1:/dev/dri/card0"
           "-l=traefik.enable=true"
           "-l=traefik.http.routers.paperless.rule=Host(`paperless.${vars.domainName}`)"
           "-l=traefik.http.services.paperless.loadbalancer.server.port=8000"
