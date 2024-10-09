@@ -1,6 +1,7 @@
 { inputs, lib, config, pkgs, vars, ... }:
   let
 directories = [
+"${vars.serviceConfigRoot}/bazarr"
 "${vars.serviceConfigRoot}/sonarr"
 "${vars.serviceConfigRoot}/radarr"
 "${vars.serviceConfigRoot}/prowlarr"
