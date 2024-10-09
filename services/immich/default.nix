@@ -47,6 +47,7 @@ in
         DB_USERNAME = "immich";
         DB_DATABASE_NAME = "immich";
         REDIS_HOSTNAME = "immich-redis";
+        DB_PASSWORD = "immich";
       };
       extraOptions = [
         "--pull=newer"
