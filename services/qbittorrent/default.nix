@@ -12,6 +12,31 @@ directories = [
   systemd.tmpfiles.rules = map (x: "d ${x} 0777 share share - -") directories;
   virtualisation.oci-containers = {
     containers = {
+      sabnzbd = {
+        image = "lscr.io/linuxserver/sabnzbd:latest";
+        autoStart = true;
+        dependsOn = [
+          "gluetun"
+        ];
+        extraOptions = [
+        "--pull=newer"
+        "--network=container:gluetun"
+        "-l=homepage.group=Arr"
+        "-l=homepage.name=SABnzbd"
+        "-l=homepage.icon=sabnzbd.svg"
+        "-l=homepage.href=https://nzb.${vars.domainName}"
+        "-l=homepage.description=Usenet client"
+        ];
+        volumes = [
+          "${vars.mainArray}/Media/Downloads:/data/completed"
+          "${vars.serviceConfigRoot}/sabnzbd:/config"
+        ];
+        environment = {
+          TZ = vars.timeZone;
+          PUID = "994";
+          GUID = "993";
+        };
+      };
       qbittorrent = {
         image = "linuxserver/qbittorrent:latest";
         autoStart = true;
