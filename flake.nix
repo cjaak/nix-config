@@ -89,7 +89,7 @@
                      ./services/traefik
                     #  ./services/minecraft
 #                      ./services/ryot
-
+                     ./services/grafana
 #                     ./services/deluge
                      ./services/qbittorrent
                      ./services/arr
