@@ -36,7 +36,6 @@ in
       volumes = [
         "${vars.serviceConfigRoot}/immich/config:/config"
         "${vars.mainArray}/Photos/Immich:/photos"
-        "${vars.mainArray}/Photos/S10m:/import:ro"
         "${vars.serviceConfigRoot}/immich/machine-learning:/config/machine-learning"
       ];
 #      environmentFiles = [ config.age.secrets.ariaImmichDatabase.path ];
