@@ -29,7 +29,7 @@ directories = [
         "-l=homepage.description=Usenet client"
         "-l=homepage.widget.type=sabnzbd"
         "-l=homepage.widget.key={{HOMEPAGE_FILE_SABNZBD_KEY}}"
-        "-l=homepage.widget.url=http://gluetun:8080"
+        "-l=homepage.widget.url=http://gluetun:8085"
         ];
         volumes = [
           "${vars.mainArray}/Media/Downloads:/config/Downloads/complete"
