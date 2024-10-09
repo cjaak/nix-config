@@ -65,6 +65,14 @@ in
         "-l=traefik.http.routers.immich.rule=Host(`photos.${vars.domainName}`)"
         "-l=traefik.http.routers.immich.service=immich"
         "-l=traefik.http.services.immich.loadbalancer.server.port=8080"
+        "-l=homepage.group=Services"
+        "-l=homepage.name=Immich"
+        "-l=homepage.description=Photo client"
+        "-l=homepage.icon=immich.svg"
+        "-l=homepage.href=https://photos.${vars.domainName}"
+        "-l=homepage.widget.type=immich"
+        "-l=homepage.widget.key={{HOMEPAGE_FILE_SABNZBD_KEY}}"
+        "-l=homepage.widget.url=http://immich-redis:8080"
       ];
     };
 
