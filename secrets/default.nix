@@ -26,6 +26,9 @@
   # age.secrets.invoiceNinja = lib.mkDefault {
   #     file = ./invoiceNinja.age;
   #   };
+   age.secrets.sabnzbdApiKey = lib.mkDefault {
+       file = ./sabnzbdApiKey.age;
+     };
   age.secrets.bazarrApiKey = lib.mkDefault {
        file = ./bazarrApiKey.age;
      };

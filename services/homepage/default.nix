@@ -62,6 +62,7 @@ homepageCustomCss = pkgs.writeTextFile {
           "${homepageSettings.widgets}:/app/config/widgets.yaml"
           "${homepageCustomCss}:/app/config/custom.css"
           "/var/run/podman/podman.sock:/var/run/docker.sock:ro"
+          "${config.age.secrets.sabnzbdApiKey.path}:/app/config/sabnzbd.key"
           "${config.age.secrets.bazarrApiKey.path}:/app/config/bazarr.key"
           "${config.age.secrets.sonarrApiKey.path}:/app/config/sonarr.key"
           "${config.age.secrets.radarrApiKey.path}:/app/config/radarr.key"
@@ -71,6 +72,7 @@ homepageCustomCss = pkgs.writeTextFile {
         ];
         environment = {
           TZ = vars.timeZone;
+          HOMEPAGE_FILE_BAZARR_KEY = "/app/config/sabnzbd.key";
           HOMEPAGE_FILE_BAZARR_KEY = "/app/config/bazarr.key";
           HOMEPAGE_FILE_SONARR_KEY = "/app/config/sonarr.key";
           HOMEPAGE_FILE_RADARR_KEY = "/app/config/radarr.key";

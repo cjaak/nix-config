@@ -27,6 +27,8 @@ directories = [
         "-l=homepage.icon=sabnzbd.svg"
         "-l=homepage.href=https://nzb.${vars.domainName}"
         "-l=homepage.description=Usenet client"
+        "-l=homepage.widget.type=sabnzbd"
+        "-l=homepage.widget.key={{HOMEPAGE_FILE_SABNZBD_KEY}}"
         "-l=homepage.widget.url=http://gluetun:8080"
         ];
         volumes = [
@@ -56,7 +58,7 @@ directories = [
         "-l=homepage.widget.type=qbittorrent"
         "-l=homepage.widget.username=admin"
         "-l=homepage.widget.password=qbittorrent"
-        "-l=homepage.widget.url=http://gluetun:8085"
+        "-l=homepage.widget.url=http://gluetun:8080"
         ];
         volumes = [
           "${vars.mainArray}/Media/Downloads:/downloads"
