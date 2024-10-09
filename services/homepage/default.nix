@@ -72,7 +72,7 @@ homepageCustomCss = pkgs.writeTextFile {
         ];
         environment = {
           TZ = vars.timeZone;
-          HOMEPAGE_FILE_BAZARR_KEY = "/app/config/sabnzbd.key";
+          HOMEPAGE_FILE_SABNZBD_KEY = "/app/config/sabnzbd.key";
           HOMEPAGE_FILE_BAZARR_KEY = "/app/config/bazarr.key";
           HOMEPAGE_FILE_SONARR_KEY = "/app/config/sonarr.key";
           HOMEPAGE_FILE_RADARR_KEY = "/app/config/radarr.key";
