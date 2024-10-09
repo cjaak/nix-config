@@ -10,6 +10,7 @@ in {
   "telegramApiKey.age".publicKeys = allKeys;
   "wireguardCredentials.age".publicKeys = allKeys;
   "cloudflareDnsApiCredentials.age".publicKeys = allKeys;
+  "immich.age".publicKeys = allKeys;
   "invoiceNinja.age".publicKeys = allKeys;
   "sabnzbdApiKey.age".publicKeys = allKeys;
   "bazarrApiKey.age".publicKeys = allKeys;

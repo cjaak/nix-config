@@ -29,6 +29,10 @@
    age.secrets.sabnzbdApiKey = lib.mkDefault {
        file = ./sabnzbdApiKey.age;
      };
+
+  age.secrets.immichApiKey = lib.mkDefault {
+       file = ./immichApiKey.age;
+     };
   age.secrets.bazarrApiKey = lib.mkDefault {
        file = ./bazarrApiKey.age;
      };

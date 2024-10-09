@@ -71,7 +71,7 @@ in
         "-l=homepage.icon=immich.svg"
         "-l=homepage.href=https://photos.${vars.domainName}"
         "-l=homepage.widget.type=immich"
-        "-l=homepage.widget.key={{HOMEPAGE_FILE_SABNZBD_KEY}}"
+        "-l=homepage.widget.key={{HOMEPAGE_FILE_IMMICH_KEY}}"
         "-l=homepage.widget.url=http://immich-redis:8080"
       ];
     };
