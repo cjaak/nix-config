@@ -174,6 +174,35 @@ system.activationScripts.recyclarr_configure = ''
           UMASK = "002";
         };
       };
+      bazarr = {
+        image = "lscr.io/linuxserver/bazarr:latest";
+        autoStart = true;
+        extraOptions = [
+          "--pull=newer"
+          "-l=traefik.enable=true"
+          "-l=traefik.http.routers.bazarr.rule=Host(`bazarr.${vars.domainName}`)"
+          "-l=traefik.http.services.bazarr.loadbalancer.server.port=6767"
+          "-l=homepage.group=Arr"
+          "-l=homepage.name=Bazarr"
+          "-l=homepage.icon=bazarr.png"
+          "-l=homepage.href=https://bazarr.${vars.domainName}"
+          "-l=homepage.description=Subtitle Tracker"
+          "-l=homepage.widget.type=bazarr"
+#          "-l=homepage.widget.key={{HOMEPAGE_FILE_BAZAAR_KEY}}"
+          "-l=homepage.widget.url=http://bazarr:6767"
+        ];
+        volumes = [
+            "${vars.mainArray}/Media/Movies:/movies"
+            "${vars.mainArray}/Media/TV:/tv"
+            "${vars.serviceConfigRoot}/bazarr:/config"
+        ];
+        environment = {
+          TZ = vars.timeZone;
+          PUID = "994";
+          PGID = "993";
+          UMASK = "002";
+        };
+      };
       recyclarr = {
         image = "ghcr.io/recyclarr/recyclarr";
         user = "994:993";
