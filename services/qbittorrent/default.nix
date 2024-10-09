@@ -32,7 +32,7 @@ directories = [
         "-l=homepage.widget.url=http://gluetun:8080"
         ];
         volumes = [
-          "${vars.mainArray}/Media/Downloads:/config/Downloads/completed"
+          "${vars.mainArray}/Media/Downloads:/config/Downloads/complete"
           "${vars.serviceConfigRoot}/sabnzbd:/config"
         ];
         environment = {
