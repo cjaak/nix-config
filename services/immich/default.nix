@@ -39,7 +39,7 @@ in
         "${vars.mainArray}/Photos/S10m:/import:ro"
         "${vars.serviceConfigRoot}/immich/machine-learning:/config/machine-learning"
       ];
-      environmentFiles = [ config.age.secrets.ariaImmichDatabase.path ];
+#      environmentFiles = [ config.age.secrets.ariaImmichDatabase.path ];
       environment = {
         PUID = "994";
         PGID = "993";
