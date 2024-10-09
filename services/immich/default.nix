@@ -74,8 +74,9 @@ in
       volumes = [
         "${vars.serviceConfigRoot}/immich/postgresql/data:/var/lib/postgresql/data"
       ];
-      environmentFiles = [ config.age.secrets.ariaImmichDatabase.path ];
+#      environmentFiles = [ config.age.secrets.ariaImmichDatabase.path ];
       environment = {
+        POSTGRES_PASSWORD = "immich";
         POSTGRES_USER = "immich";
         POSTGRES_DB = "immich";
       };
