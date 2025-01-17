@@ -71,9 +71,8 @@ services.samba = {
             "map to guest" = lib.mkDefault "bad user";
             "passdb backend" = lib.mkDefault "tdbsam";
           }
-          cfg.globalSettings
         ];
-      }// builtins.mapAttrs (name: value: value // cfg.commonSettings) cfg.shares;
+      }// smb_shares;
 };
 services.avahi = {
   enable = true;
