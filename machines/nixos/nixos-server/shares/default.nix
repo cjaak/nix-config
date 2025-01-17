@@ -67,7 +67,6 @@ services.samba = {
             "netbios name" = lib.mkDefault config.networking.hostName;
             "security" = lib.mkDefault "user";
             "invalid users" = [ "root" ];
-            "hosts allow" = lib.mkDefault (lib.strings.concatStringsSep " " smb_networks);
             "guest account" = lib.mkDefault "nobody";
             "map to guest" = lib.mkDefault "bad user";
             "passdb backend" = lib.mkDefault "tdbsam";
