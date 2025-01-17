@@ -93,7 +93,7 @@ in
       celery_worker = {
         image = "wger/server:latest";
         autoStart = true;
-        command = "/start-worker";
+        exec = "/start-worker";
         dependsOn = ["web"];
         extraOptions = [
           "--health-cmd='celery -A wger inspect ping'"
