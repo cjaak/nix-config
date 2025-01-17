@@ -51,7 +51,7 @@ in
       };
       lualine = {
         enable = true;
-        sections = {
+        settings.sections = {
           lualine_x = [
             "diagnostics"
             "encoding"
@@ -73,7 +73,7 @@ in
       gitgutter = {
         enable = true;
       };
-      surround = {
+      vim-surround = {
         enable = true;
       };
       nvim-colorizer = {

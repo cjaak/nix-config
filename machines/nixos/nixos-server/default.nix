@@ -3,7 +3,7 @@
   boot.kernelModules = [ "i915" ];
   hardware.cpu.intel.updateMicrocode = true;
   hardware.enableRedistributableFirmware = true;
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
   boot.zfs.forceImportRoot = true;
   zfs-root = {
     boot = {
