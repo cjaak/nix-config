@@ -1,7 +1,7 @@
 {
   programs.kitty = {
     enable = true;
-    themeFile = "Nord";
+    theme = "Nord";
     keybindings = {
       "cmd+w" = "no_op";
       "cmd+t" = "no_op";
