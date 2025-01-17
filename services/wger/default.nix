@@ -93,9 +93,9 @@ in
       celery_worker = {
         image = "wger/server:latest";
         autoStart = true;
-        exec = "/start-worker";
         dependsOn = ["web"];
         extraOptions = [
+          "--entrypoint" "/start-worker"
           "--health-cmd='celery -A wger inspect ping'"
           "--health-interval=10s"
           "--health-timeout=5s"
@@ -110,7 +110,9 @@ in
       celery_beat = {
         image = "wger/server:latest";
         autoStart = true;
-        exec = "/start-beat";
+        extraOptions = [
+          "--entrypoint" "/start-beat"
+        ];
         dependsOn = ["celery_worker"];
         volumes = [
           "${vars.serviceConfigRoot}/wger/celery-beat:/home/wger/beat"
