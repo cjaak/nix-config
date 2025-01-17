@@ -59,20 +59,22 @@ networking.firewall = {
 services.samba = {
   enable = true;
   openFirewall = true;
-  invalidUsers = [
-    "root"
-  ];
-  securityType = "user";
-  extraConfig = ''
-    workgroup = WORKGROUP
-    server string = nixos-server
-    netbios name = nixos-server
-    security = user
-    guest account = nobody
-    map to guest = bad user
-    passdb backend = tdbsam
-    '';
-  shares = smb_shares;
+  settings = {
+        global = lib.mkMerge [
+          {
+            workgroup = lib.mkDefault "WORKGROUP";
+            "server string" = lib.mkDefault config.networking.hostName;
+            "netbios name" = lib.mkDefault config.networking.hostName;
+            "security" = lib.mkDefault "user";
+            "invalid users" = [ "root" ];
+            "hosts allow" = lib.mkDefault (lib.strings.concatStringsSep " " smb_networks);
+            "guest account" = lib.mkDefault "nobody";
+            "map to guest" = lib.mkDefault "bad user";
+            "passdb backend" = lib.mkDefault "tdbsam";
+          }
+          cfg.globalSettings
+        ];
+      }// builtins.mapAttrs (name: value: value // cfg.commonSettings) cfg.shares;
 };
 services.avahi = {
   enable = true;

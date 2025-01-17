@@ -4,7 +4,6 @@
   hardware.cpu.intel.updateMicrocode = true;
   hardware.enableRedistributableFirmware = true;
   hardware.opengl.enable = true;
-  hardware.opengl.driSupport = true;
   boot.zfs.forceImportRoot = true;
   zfs-root = {
     boot = {
