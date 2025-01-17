@@ -1,5 +1,5 @@
 {
-  tty = {
+  programs.kitty = {
     enable = true;
     themeFile = "Nord";
     keybindings = {
