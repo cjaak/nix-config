@@ -15,10 +15,10 @@ in
   # Define Podman containers
   virtualisation.oci-containers = {
     containers = {
-      web = {
+      wger_web = {
         image = "wger/server:latest";
         autoStart = true;
-        dependsOn = ["db" "cache"];
+        dependsOn = ["wger_db" "wger_cache"];
         extraOptions = [
           "--health-cmd=wget --no-verbose --tries=1 --spider http://localhost:8000"
           "--health-interval=10s"
@@ -36,10 +36,10 @@ in
         ];
       };
 
-      nginx = {
+      wger_nginx = {
         image = "nginx:stable";
         autoStart = true;
-        dependsOn = ["web"];
+        dependsOn = ["wger_web"];
         ports = ["80:80"];
         extraOptions = [
           "--health-cmd='service nginx status'"
@@ -55,7 +55,7 @@ in
         ];
       };
 
-      db = {
+      wger_db = {
         image = "postgres:15-alpine";
         autoStart = true;
         environment = {
@@ -75,7 +75,7 @@ in
         ];
       };
 
-      cache = {
+      wger_cache = {
         image = "redis";
         autoStart = true;
         extraOptions = [
@@ -90,10 +90,10 @@ in
         ];
       };
 
-      celery_worker = {
+      wger_celery_worker = {
         image = "wger/server:latest";
         autoStart = true;
-        dependsOn = ["web"];
+        dependsOn = ["wger_web"];
         extraOptions = [
           "--entrypoint" "/start-worker"
           "--health-cmd='celery -A wger inspect ping'"
@@ -107,13 +107,13 @@ in
         ];
       };
 
-      celery_beat = {
+      wger_celery_beat = {
         image = "wger/server:latest";
         autoStart = true;
         extraOptions = [
           "--entrypoint" "/start-beat"
         ];
-        dependsOn = ["celery_worker"];
+        dependsOn = ["wger_celery_worker"];
         volumes = [
           "${vars.serviceConfigRoot}/wger/celery-beat:/home/wger/beat"
         ];
