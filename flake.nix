@@ -1,3 +1,4 @@
+
 {
     description = "my nix home server";
     
@@ -102,7 +103,6 @@
                      ./services/pingvin-share
                     # #./services/scrutiny
                      ./services/homepage
-                     ./services/wger
 
                     # # User-specific configurations
                     ./users/charlie
