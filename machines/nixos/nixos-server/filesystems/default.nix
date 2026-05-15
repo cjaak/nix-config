@@ -47,7 +47,7 @@
       "initrd.target"
     ]; 
     after = [
-      "zfs-import-zroot.service"
+      "zfs-import-rpool.service"
     ];
     before = [ 
       "sysroot.mount"
