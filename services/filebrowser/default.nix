@@ -12,6 +12,7 @@ in
     filebrowser = {
       image = "filebrowser/filebrowser:latest";
       autoStart = true;
+      cmd = ["--port" "8082"];
       volumes = [
         "${vars.mainArray}/Media:/srv/Media:ro"
         "${svcRoot}/filebrowser/filebrowser.db:/database/filebrowser.db"
