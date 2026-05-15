@@ -103,6 +103,7 @@
                      ./services/pingvin-share
                     # #./services/scrutiny
                      ./services/homepage
+                     ./services/nextcloud
 
                     # # User-specific configurations
                     ./users/charlie
