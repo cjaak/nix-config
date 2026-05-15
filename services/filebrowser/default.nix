@@ -19,6 +19,7 @@ in
       ];
       extraOptions = [
         "--pull=newer"
+        "--no-healthcheck"
         "-l=traefik.enable=true"
         "-l=traefik.http.routers.filebrowser.rule=Host(`browse.${vars.domainName}`)"
         "-l=traefik.http.services.filebrowser.loadbalancer.server.port=8082"
