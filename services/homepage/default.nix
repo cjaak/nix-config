@@ -73,6 +73,7 @@ homepageCustomCss = pkgs.writeTextFile {
         ];
         environment = {
           TZ = vars.timeZone;
+          HOMEPAGE_ALLOWED_HOSTS = vars.domainName;
           HOMEPAGE_FILE_IMMICH_KEY = "/app/config/immich.key";
           HOMEPAGE_FILE_SABNZBD_KEY = "/app/config/sabnzbd.key";
           HOMEPAGE_FILE_BAZARR_KEY = "/app/config/bazarr.key";

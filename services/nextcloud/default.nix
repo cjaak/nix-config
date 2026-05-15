@@ -7,9 +7,10 @@ in
     map (x: "d ${x} 0777 share share - -") [
       "${svcRoot}/nextcloud"
       "${svcRoot}/nextcloud/db"
-      "${svcRoot}/nextcloud/config"
-    ] ++ [
-      "d ${vars.cacheArray}/Nextcloud 0770 33 33 - -"
+    ] ++
+    map (x: "d ${x} 0770 33 33 - -") [
+      "${svcRoot}/nextcloud/html"
+      "${vars.cacheArray}/Nextcloud"
     ];
 
   systemd.services = {
@@ -34,13 +35,14 @@ in
       image = "nextcloud:apache";
       autoStart = true;
       volumes = [
-        "${vars.cacheArray}/Nextcloud:/var/www/html/data"
-        "${svcRoot}/nextcloud/config:/var/www/html/config"
+        "${svcRoot}/nextcloud/html:/var/www/html"
+        "${vars.cacheArray}/Nextcloud:/data"
       ];
       environment = {
         NEXTCLOUD_TRUSTED_DOMAINS = "files.${vars.domainName}";
         NEXTCLOUD_ADMIN_USER = "admin";
         NEXTCLOUD_ADMIN_PASSWORD = "changeme";
+        NEXTCLOUD_DATA_DIR = "/data";
         POSTGRES_HOST = "localhost";
         POSTGRES_DB = "nextcloud";
         POSTGRES_USER = "nextcloud";
