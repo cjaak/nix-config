@@ -104,6 +104,7 @@
                     # #./services/scrutiny
                      ./services/homepage
                      ./services/nextcloud
+                     ./services/filebrowser
 
                     # # User-specific configurations
                     ./users/charlie
