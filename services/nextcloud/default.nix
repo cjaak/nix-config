@@ -1,14 +1,16 @@
 { config, vars, ... }:
 let
-  directories = [
-    "${vars.serviceConfigRoot}/nextcloud"
-    "${vars.serviceConfigRoot}/nextcloud/db"
-    "${vars.serviceConfigRoot}/nextcloud/config"
-    "${vars.mainArray}/Nextcloud"
-  ];
+  svcRoot = vars.serviceConfigRoot;
 in
 {
-  systemd.tmpfiles.rules = map (x: "d ${x} 0777 share share - -") directories;
+  systemd.tmpfiles.rules =
+    map (x: "d ${x} 0777 share share - -") [
+      "${svcRoot}/nextcloud"
+      "${svcRoot}/nextcloud/db"
+      "${svcRoot}/nextcloud/config"
+    ] ++ [
+      "d ${vars.mainArray}/Nextcloud 0770 33 33 - -"
+    ];
 
   systemd.services = {
     podman-nextcloud = {
@@ -33,7 +35,7 @@ in
       autoStart = true;
       volumes = [
         "${vars.mainArray}/Nextcloud:/var/www/html/data"
-        "${vars.serviceConfigRoot}/nextcloud/config:/var/www/html/config"
+        "${svcRoot}/nextcloud/config:/var/www/html/config"
       ];
       environment = {
         NEXTCLOUD_TRUSTED_DOMAINS = "files.${vars.domainName}";
@@ -59,7 +61,7 @@ in
       image = "postgres:16-alpine";
       autoStart = true;
       volumes = [
-        "${vars.serviceConfigRoot}/nextcloud/db:/var/lib/postgresql/data"
+        "${svcRoot}/nextcloud/db:/var/lib/postgresql/data"
       ];
       environment = {
         POSTGRES_DB = "nextcloud";
