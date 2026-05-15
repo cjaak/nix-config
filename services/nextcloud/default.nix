@@ -9,7 +9,7 @@ in
       "${svcRoot}/nextcloud/db"
       "${svcRoot}/nextcloud/config"
     ] ++ [
-      "d ${vars.mainArray}/Nextcloud 0770 33 33 - -"
+      "d ${vars.cacheArray}/Nextcloud 0770 33 33 - -"
     ];
 
   systemd.services = {
@@ -34,7 +34,7 @@ in
       image = "nextcloud:apache";
       autoStart = true;
       volumes = [
-        "${vars.mainArray}/Nextcloud:/var/www/html/data"
+        "${vars.cacheArray}/Nextcloud:/var/www/html/data"
         "${svcRoot}/nextcloud/config:/var/www/html/config"
       ];
       environment = {
