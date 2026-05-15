@@ -21,7 +21,7 @@ in
         "--pull=newer"
         "-l=traefik.enable=true"
         "-l=traefik.http.routers.filebrowser.rule=Host(`browse.${vars.domainName}`)"
-        "-l=traefik.http.services.filebrowser.loadbalancer.server.port=80"
+        "-l=traefik.http.services.filebrowser.loadbalancer.server.port=8082"
         "-l=homepage.group=Services"
         "-l=homepage.name=FileBrowser"
         "-l=homepage.icon=filebrowser.svg"
