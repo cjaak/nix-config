@@ -21,6 +21,10 @@ in
         "podman-nextcloud-redis.service"
       ];
     };
+    podman-nextcloud-db = {
+      requires = [ "podman-nextcloud-redis.service" ];
+      after = [ "podman-nextcloud-redis.service" ];
+    };
   };
 
   virtualisation.oci-containers.containers = {
@@ -47,14 +51,7 @@ in
       };
       extraOptions = [
         "--pull=newer"
-        "-l=traefik.enable=true"
-        "-l=traefik.http.routers.nextcloud.rule=Host(`files.${vars.domainName}`)"
-        "-l=traefik.http.services.nextcloud.loadbalancer.server.port=80"
-        "-l=homepage.group=Services"
-        "-l=homepage.name=Nextcloud"
-        "-l=homepage.icon=nextcloud.svg"
-        "-l=homepage.href=https://files.${vars.domainName}"
-        "-l=homepage.description=File storage"
+        "--network=container:nextcloud-redis"
       ];
     };
 
@@ -71,7 +68,7 @@ in
       };
       extraOptions = [
         "--pull=newer"
-        "--network=container:nextcloud"
+        "--network=container:nextcloud-redis"
       ];
     };
 
@@ -80,7 +77,14 @@ in
       autoStart = true;
       extraOptions = [
         "--pull=newer"
-        "--network=container:nextcloud"
+        "-l=traefik.enable=true"
+        "-l=traefik.http.routers.nextcloud.rule=Host(`files.${vars.domainName}`)"
+        "-l=traefik.http.services.nextcloud.loadbalancer.server.port=80"
+        "-l=homepage.group=Services"
+        "-l=homepage.name=Nextcloud"
+        "-l=homepage.icon=nextcloud.svg"
+        "-l=homepage.href=https://files.${vars.domainName}"
+        "-l=homepage.description=File storage"
       ];
     };
   };
