@@ -13,6 +13,7 @@ in
       image = "filebrowser/filebrowser:latest";
       autoStart = true;
       cmd = ["--port" "8082"];
+      user = "994:993";
       volumes = [
         "${vars.mainArray}/Media:/srv/Media"
         "${svcRoot}/filebrowser/filebrowser.db:/database/filebrowser.db"
