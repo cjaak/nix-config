@@ -105,6 +105,7 @@
                      ./services/homepage
                      ./services/nextcloud
                      ./services/filebrowser
+                     ./services/rreading-glasses
 
                     # # User-specific configurations
                     ./users/charlie
