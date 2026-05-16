@@ -5,6 +5,7 @@ in
 {
   systemd.tmpfiles.rules = [
     "d ${svcRoot}/filebrowser 0777 share share - -"
+    "d ${svcRoot}/filebrowser/config 0777 share share - -"
     "f ${svcRoot}/filebrowser/filebrowser.db 0666 share share - -"
   ];
 
@@ -17,6 +18,7 @@ in
       volumes = [
         "${vars.mainArray}/Media:/srv/Media"
         "${svcRoot}/filebrowser/filebrowser.db:/database/filebrowser.db"
+        "${svcRoot}/filebrowser/config:/config"
       ];
       extraOptions = [
         "--pull=newer"
