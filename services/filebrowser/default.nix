@@ -14,7 +14,7 @@ in
       autoStart = true;
       cmd = ["--port" "8082"];
       volumes = [
-        "${vars.mainArray}/Media:/srv/Media:ro"
+        "${vars.mainArray}/Media:/srv/Media"
         "${svcRoot}/filebrowser/filebrowser.db:/database/filebrowser.db"
       ];
       extraOptions = [
