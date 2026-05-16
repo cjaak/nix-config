@@ -1,5 +1,14 @@
-{ config, vars, ... }:
+{ config, vars, pkgs, ... }:
 let
+gluetunAuth = pkgs.writeText "gluetun-auth.toml" ''
+  [[roles]]
+  name = "public"
+  auth = "none"
+  routes = [
+    { method = "GET", path = "/v1/publicip/ip" },
+    { method = "GET", path = "/v1/vpn/status" },
+  ]
+'';
 directories = [
 "${vars.serviceConfigRoot}/qbittorrent"
 "${vars.serviceConfigRoot}/sabnzbd"
@@ -95,6 +104,9 @@ directories = [
         ];
         ports = [
           "127.0.0.1:8083:8000"
+        ];
+        volumes = [
+          "${gluetunAuth}:/gluetun/auth/config.toml:ro"
         ];
         environmentFiles = [
           config.age.secrets.wireguardCredentials.path
