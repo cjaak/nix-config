@@ -4,7 +4,7 @@ gluetunAuth = pkgs.writeText "gluetun-auth.toml" ''
   [[roles]]
   name = "public"
   auth = "none"
-  routes = ["*"]
+  routes = ["GET /v1/publicip/ip", "GET /v1/vpn/status"]
 '';
 directories = [
 "${vars.serviceConfigRoot}/qbittorrent"
