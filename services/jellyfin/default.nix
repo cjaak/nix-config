@@ -16,7 +16,9 @@ in
         autoStart = true;
         extraOptions = [
           "--pull=newer"
-          "--device=/dev/dri/renderD128:/dev/dri/renderD128"
+          "--device=/dev/dri:/dev/dri"
+          "--group-add=render"
+          "--group-add=video"
           "-l=traefik.enable=true"
           "-l=traefik.http.routers.jellyfin.rule=Host(`jellyfin.${vars.domainName}`)"
           "-l=traefik.http.services.jellyfin.loadbalancer.server.port=8096"
@@ -41,7 +43,6 @@ in
           UMASK = "002";
           PGID = "993";
           DOCKER_MODS = "linuxserver/mods:jellyfin-opencl-intel";
-          ROC_ENABLE_PRE_VEGA = "1";
         };
       };
       jellyseerr = {
