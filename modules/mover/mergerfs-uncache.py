@@ -173,7 +173,8 @@ if __name__ == "__main__":
         ret = subprocess.call(
             [
                 "rsync",
-                "-axqAXWESRO",
+                "-rltqWESRO",
+                "--no-implied-dirs",
                 "--preallocate",
                 "--remove-source-files",
                 f"{cache_path}/./{c_path.relative_to(cache_path)}",
