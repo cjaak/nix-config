@@ -42,6 +42,8 @@
 
   nix.settings.experimental-features = lib.mkDefault [ "nix-command" "flakes" ];
 
+  hardware.graphics.enable = true;
+
   programs.git.enable = true;
   programs.mosh.enable = true;
   programs.htop.enable = true;
