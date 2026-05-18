@@ -44,6 +44,9 @@
 
   hardware.graphics.enable = true;
 
+  users.groups.render = {};
+  users.groups.video = {};
+
   programs.git.enable = true;
   programs.mosh.enable = true;
   programs.htop.enable = true;
