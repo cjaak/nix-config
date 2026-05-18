@@ -58,14 +58,16 @@ in {
         Group = "share";
       };
     postStop = ''
-      message=$(/run/wrappers/bin/sudo journalctl --unit=mergerfs-uncache.service -n 20 --no-pager)
-      /run/current-system/sw/bin/notify -s "$SERVICE_RESULT" -t "mergerfs-uncache Mover" -m "$message"
+      if command -v /run/current-system/sw/bin/notify &>/dev/null; then
+        message=$(/run/wrappers/bin/sudo journalctl --unit=mergerfs-uncache.service -n 20 --no-pager)
+        /run/current-system/sw/bin/notify -s "$SERVICE_RESULT" -t "mergerfs-uncache Mover" -m "$message"
+      fi
       '';
     };
     timers.mergerfs-uncache = {
       wantedBy = ["multi-user.target"];
       timerConfig = {
-        OnCalendar = "Sat 00:00:00";
+        OnCalendar = "daily";
         Unit = "mergerfs-uncache.service";
       };
     };
