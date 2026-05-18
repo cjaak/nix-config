@@ -17,8 +17,6 @@ in
         extraOptions = [
           "--pull=newer"
           "--device=/dev/dri:/dev/dri"
-          "--group-add=render"
-          "--group-add=video"
           "-l=traefik.enable=true"
           "-l=traefik.http.routers.jellyfin.rule=Host(`jellyfin.${vars.domainName}`)"
           "-l=traefik.http.services.jellyfin.loadbalancer.server.port=8096"
