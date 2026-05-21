@@ -35,8 +35,10 @@ in
 
   programs.git = {
     enable = true;
-    userName  = "charlie";
-    userEmail = "chwiegand@proton.me";
+    settings.user = {
+      name  = "charlie";
+      email = "chwiegand@proton.me";
+    };
   };
 
   programs.home-manager.enable = true;

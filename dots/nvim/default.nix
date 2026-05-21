@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
   ];
 
 
@@ -76,7 +76,10 @@ in
       vim-surround = {
         enable = true;
       };
-      nvim-colorizer = {
+      colorizer = {
+        enable = true;
+      };
+      web-devicons = {
         enable = true;
       };
     };

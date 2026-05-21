@@ -115,7 +115,7 @@
                         home-manager.extraSpecialArgs = { inherit inputs networksLocal networksExternal; };
                         home-manager.users.charlie.imports = [ 
                         agenix.homeManagerModules.default
-                        nix-index-database.hmModules.nix-index
+                        nix-index-database.homeModules.nix-index
                         ./users/charlie/dots.nix 
                         ];
                     home-manager.backupFileExtension = "bak";
