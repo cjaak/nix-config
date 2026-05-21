@@ -79,7 +79,6 @@
     excludedPaths = [
       "YoutubeCurrent"
       "Media/Kiwix"
-      "Media/Downloads"
       "Documents"
       "TimeMachine"
       ".DS_Store"
