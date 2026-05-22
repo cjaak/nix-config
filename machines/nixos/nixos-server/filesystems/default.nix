@@ -81,7 +81,7 @@
   };
 
   fileSystems."/boot/esp" =
-  { device = "/dev/disk/by-id/nvme-Fanxiang_S500Pro_256GB_FXS500Pro234940404-part1";
+  { device = "/dev/disk/by-id/nvme-Fanxiang_S500Pro_256GB_FXS500Pro234940404-part2";
     fsType = "vfat";
     options = [ "nofail" "x-systemd.mount-timeout=30s" ];
   };
