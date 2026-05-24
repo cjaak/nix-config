@@ -16,8 +16,8 @@
 
   users.users = {
     root = {
-      initialHashedPassword = config.age.secrets.hashedUserPassword.path;
-      openssh.authorizedKeys.keys = [ "sshKey_placeholder" ];
+      hashedPasswordFile = config.age.secrets.hashedUserPassword.path;
+      openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBwCrkUq76rnolIfL8eApseG7rlmxCWDlqPx2Xti/fYH chwiegand@proton.me" ];
     };
   };
   services.openssh = {

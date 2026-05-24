@@ -106,6 +106,7 @@
   fileSystems."/var/lib/containers" =
   { device = "/dev/zvol/rpool/docker";
     fsType = "ext4";
+    options = [ "nofail" "x-systemd.mount-timeout=30s" ];
   };
 
   fileSystems.${vars.cacheArray} =
