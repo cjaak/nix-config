@@ -19,8 +19,8 @@
       "amd_pstate=active"
       ];
       sshUnlock = {
-        enable = true;
-        authorizedKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBwCrkUq76rnolIfL8eApseG7rlmxCWDlqPx2Xti/fYH chwiegand@proton.me" ];
+        enable = false;
+        authorizedKeys = [ ];
       };
     };
     networking = {
